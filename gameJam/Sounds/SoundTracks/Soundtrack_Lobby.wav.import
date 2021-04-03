@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Soundtrack_Lobby.wav-738fe2ba5a5703b9b5aca956630d51cb.sample"
+
+[deps]
+
+source_file="res://Sounds/SoundTracks/Soundtrack_Lobby.wav"
+dest_files=[ "res://.import/Soundtrack_Lobby.wav-738fe2ba5a5703b9b5aca956630d51cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
