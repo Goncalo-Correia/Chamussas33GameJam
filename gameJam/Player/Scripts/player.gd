@@ -6,6 +6,7 @@ enum WEAPONS { NET, KNIFE, HARPOON }
 
 var curr_weapon
 onready var cursor = $Cursor
+onready var knife_cursor = $Position2D/KnifeCursor
 
 const ACCELARATION = 10;
 const MAX_SPEED = 100;
@@ -33,10 +34,13 @@ func _input(event):
 func _process(_delta):
 	
 	if Input.is_action_just_released("weapon_1"):
+		knife_cursor.visible = false
 		curr_weapon = WEAPONS.NET
 	elif Input.is_action_just_released("weapon_2"):
+		knife_cursor.visible = false
 		curr_weapon = WEAPONS.HARPOON
 	elif Input.is_action_just_released("weapon_3"):
+		knife_cursor.visible = true
 		curr_weapon = WEAPONS.KNIFE
 	
 	var up = Input.is_action_pressed("move_up")
@@ -79,3 +83,6 @@ func get_cursor():
 	
 func get_weapon():
 	return curr_weapon
+	
+func get_knife_cursor():
+	return knife_cursor

@@ -18,8 +18,9 @@ func _ready():
 
 func play_tween():
 	look_at(get_global_mouse_position())
-	var from = player.global_position if going else player.get_cursor().global_position
-	var to = player.get_cursor().global_position if going else player.global_position
+	player.get_knife_cursor().visible = false
+	var from = player.get_knife_cursor().global_position if going else player.get_cursor().global_position
+	var to = player.get_cursor().global_position if going else player.get_knife_cursor().global_position
 	tween.interpolate_property(
 		sprite, 
 		"global_position",
@@ -43,6 +44,7 @@ func _on_tween_completed(obj,path):
 		going = false
 		play_tween()
 	else:
+		player.get_knife_cursor().visible = true
 		queue_free()
 	
 	
