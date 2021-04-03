@@ -87,10 +87,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -455.0
-margin_top = -207.0
-margin_right = 455.0
-margin_bottom = -40.0
+margin_left = 57.0
+margin_top = 393.0
+margin_right = 967.0
+margin_bottom = 560.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -147,7 +147,7 @@ anchor_bottom = 1.0
 margin_left = -36.4279
 margin_top = -35.9016
 margin_right = 14.5721
-margin_bottom = 31.9963
+margin_bottom = 23.5968
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 stretch_mode = 4
