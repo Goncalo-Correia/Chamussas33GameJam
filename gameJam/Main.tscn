@@ -18,3 +18,5 @@ script = ExtResource( 4 )
 
 [node name="Dummy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 35.0731, -19.7753 )
+
+[editable path="Player"]
