@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 enum STATES { IDLE, PATROLING, CHASING, DEAD }
 var curr_state
-var speed = 10
+export var speed = 10
 var player
 var rng = RandomNumberGenerator.new()
 var curr_direction = Vector2.ZERO
@@ -33,7 +33,11 @@ func _ready():
 	
 func _physics_process(delta):
 	
-	
+	if is_dead:
+		$Dead.modulate.a -= 0.01
+		if $Dead.modulate.a <= 0:
+			queue_free()
+		return
 	
 	match curr_state:
 		STATES.DEAD:

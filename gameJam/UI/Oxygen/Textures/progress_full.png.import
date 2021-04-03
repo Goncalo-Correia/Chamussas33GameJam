@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crab_3.png-3ab4bf9a9698847709d3c3dc063bfe04.stex"
+path="res://.import/progress_full.png-5d82afcce4117210b3ad4b1871f8324e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Regular/Textures/crab_3.png"
-dest_files=[ "res://.import/crab_3.png-3ab4bf9a9698847709d3c3dc063bfe04.stex" ]
+source_file="res://UI/Oxygen/Textures/progress_full.png"
+dest_files=[ "res://.import/progress_full.png-5d82afcce4117210b3ad4b1871f8324e.stex" ]
 
 [params]
 

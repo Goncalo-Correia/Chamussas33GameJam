@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crab_3.png-3ab4bf9a9698847709d3c3dc063bfe04.stex"
+path="res://.import/fish_1_dead.png-c307814af6faebb4f10ca428f5f298e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Regular/Textures/crab_3.png"
-dest_files=[ "res://.import/crab_3.png-3ab4bf9a9698847709d3c3dc063bfe04.stex" ]
+source_file="res://Enemy/Regular/Textures/fish_1_dead.png"
+dest_files=[ "res://.import/fish_1_dead.png-c307814af6faebb4f10ca428f5f298e5.stex" ]
 
 [params]
 

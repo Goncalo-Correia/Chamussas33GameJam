@@ -35,8 +35,8 @@ func _ready():
 func _physics_process(delta):
 	
 	if is_dead:
-		$Angry.modulate.a -= 0.01
-		if $Angry.modulate.a <= 0:
+		$Dead.modulate.a -= 0.01
+		if $Dead.modulate.a <= 0:
 			queue_free()
 		return
 	

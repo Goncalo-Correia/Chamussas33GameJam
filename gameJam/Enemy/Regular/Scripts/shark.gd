@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 enum STATES { IDLE, PATROLING, CHASING, DEAD }
 var curr_state
-var speed = 10
+export var speed = 10
 var player
 var rng = RandomNumberGenerator.new()
 var curr_direction = Vector2.ZERO

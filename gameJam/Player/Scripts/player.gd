@@ -3,7 +3,7 @@ extends KinematicBody2D
 class_name PersistentState
 
 var oxygen = 100
-var oxygen_depletion_modifier = 0.1
+var oxygen_depletion_modifier = 1
 onready var oxygen_ui = $CanvasLayer/Oxygen
 
 onready var area = $Area2D
