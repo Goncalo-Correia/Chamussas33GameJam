@@ -1,20 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player/Textures/colored_transparent.png" type="Texture" id=1]
+[ext_resource path="res://Weapon/Textures/weapon_3.png" type="Texture" id=1]
 [ext_resource path="res://Weapon/Scripts/harpoon.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2.1253, 2.22335 )
+extents = Vector2( 2.98906, 2.76293 )
 
 [node name="Harpoon" type="RigidBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-rotation = 0.772149
+rotation = 1.5708
 texture = ExtResource( 1 )
-region_enabled = true
 region_rect = Rect2( 749.135, 85.6245, 13.781, 14.1747 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 5.30164, 0 )
+position = Vector2( 11.4306, 0.360526 )
 shape = SubResource( 1 )

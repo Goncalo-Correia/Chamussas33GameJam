@@ -2,11 +2,15 @@ extends KinematicBody2D
 
 class_name PersistentState
 
+var harpoons = 5
+var nets = 5
+
 enum WEAPONS { NET, KNIFE, HARPOON }
 
 var curr_weapon
 onready var cursor = $Cursor
 onready var knife_cursor = $Position2D/KnifeCursor
+onready var weapon_ui = $WeaponUI
 
 const ACCELARATION = 10;
 const MAX_SPEED = 100;
@@ -24,11 +28,23 @@ var direction = Vector2.DOWN;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_factory = StateFactory.new();
+	weapon_ui._set_player(self)
 	curr_weapon = WEAPONS.NET
 	change_state("idle");
 	
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
+		match curr_weapon:
+			WEAPONS.HARPOON:
+				if harpoons == 0:
+					return
+				else:
+					harpoons-=1
+			WEAPONS.NET:
+				if nets == 0:
+					return
+				else:
+					nets -= 1
 		emit_signal("shoot", get_global_mouse_position().normalized())
 
 func _process(_delta):

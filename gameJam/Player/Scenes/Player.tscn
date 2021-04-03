@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Textures/player.png" type="Texture" id=1]
 [ext_resource path="res://Player/Scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://Player/Scenes/Cursor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://0x72_DungeonTilesetII_v1.3.png" type="Texture" id=4]
 [ext_resource path="res://Player/Scenes/KnifeCursor.gd" type="Script" id=5]
+[ext_resource path="res://UI/Weapon/Scenes/UI.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.3364
@@ -89,3 +90,9 @@ texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 291.739, 18.2045, 7.75119, 13.252 )
 script = ExtResource( 5 )
+
+[node name="WeaponUI" parent="." instance=ExtResource( 6 )]
+margin_left = -251.281
+margin_top = 125.988
+margin_right = -251.281
+margin_bottom = 125.988

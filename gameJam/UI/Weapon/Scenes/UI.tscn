@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/Weapon/Scenes/HarpoonUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Weapon/Scripts/UI.gd" type="Script" id=2]
+[ext_resource path="res://UI/Weapon/Scenes/NetUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Weapon/Scenes/KnifeUI.tscn" type="PackedScene" id=4]
+
+[node name="Control" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Harpoon" parent="." instance=ExtResource( 1 )]
+margin_left = 44.4459
+margin_top = 6.15047
+margin_right = 44.4459
+margin_bottom = 6.15047
+
+[node name="Net" parent="." instance=ExtResource( 3 )]
+margin_left = 5.10606
+margin_top = 5.57025
+margin_right = 5.10606
+margin_bottom = 5.57025
+
+[node name="Knife" parent="." instance=ExtResource( 4 )]
+margin_left = 80.0722
+margin_top = 3.4814
+margin_right = 80.0722
+margin_bottom = 3.4814

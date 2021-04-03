@@ -6,7 +6,7 @@ var direction = Vector2.ZERO
 var player
 onready var tween = $Tween
 onready var sprite = $Sprite
-var knife_speed = 0.2
+var knife_speed = 0.07
 
 var is_animation_player = false
 var going = true
