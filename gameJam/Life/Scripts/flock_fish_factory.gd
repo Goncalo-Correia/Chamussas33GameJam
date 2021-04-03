@@ -6,9 +6,11 @@ onready var timer = $Timer
 
 export var direction = Vector2.ZERO
 export var rot = 0
+export var frequency = 1
 
 func _ready():
 	timer.connect("timeout",self,"create_flock")
+	timer.wait_time = frequency
 	pass
 
 func create_flock():
