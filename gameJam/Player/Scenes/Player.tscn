@@ -97,7 +97,7 @@ script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+[node name="UnderSeaShader" type="Sprite" parent="CanvasLayer"]
 material = ExtResource( 9 )
 position = Vector2( 515.352, 279.525 )
 scale = Vector2( 16.0866, 10.0109 )
