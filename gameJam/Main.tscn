@@ -12,20 +12,24 @@
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Map" parent="." instance=ExtResource( 5 )]
+[node name="DeepSeaNode" type="Node2D" parent="."]
 
-[node name="WeaponFactory" type="Node2D" parent="."]
+[node name="Map" parent="DeepSeaNode" instance=ExtResource( 5 )]
+
+[node name="WeaponFactory" type="Node2D" parent="DeepSeaNode"]
 script = ExtResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" parent="DeepSeaNode" instance=ExtResource( 1 )]
 
-[node name="Dummy" parent="." instance=ExtResource( 2 )]
+[node name="Dummy" parent="DeepSeaNode" instance=ExtResource( 2 )]
 position = Vector2( 35.0731, -19.7753 )
 
-[node name="Crab" parent="." instance=ExtResource( 6 )]
+[node name="Crab" parent="DeepSeaNode" instance=ExtResource( 6 )]
 position = Vector2( 140.197, -36.0303 )
 
-[node name="Swordfish" parent="." instance=ExtResource( 7 )]
+[node name="Swordfish" parent="DeepSeaNode" instance=ExtResource( 7 )]
 position = Vector2( 201.199, 244.72 )
+
+[node name="SeaLevelNode" type="Node2D" parent="."]
 
 [node name="AudioLibrary" parent="." instance=ExtResource( 8 )]
