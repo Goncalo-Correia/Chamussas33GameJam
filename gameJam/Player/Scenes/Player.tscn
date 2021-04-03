@@ -10,14 +10,13 @@
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://Shaders/WaterShaderMaterial.tres" type="Material" id=9]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 3.3364
 height = 8.75865
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
+[sub_resource type="Animation" id=3]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -45,8 +44,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.0709, 1.0921 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "move"
+[sub_resource type="Animation" id=4]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -68,7 +66,7 @@ collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.156555, 0 )
@@ -81,11 +79,11 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 0.0882492 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 2 )
-anims/move = SubResource( 3 )
+anims/idle = SubResource( 3 )
+anims/move = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
