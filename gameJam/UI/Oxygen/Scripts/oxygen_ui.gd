@@ -15,5 +15,5 @@ func _set_value(val):
 	progress.value = val
 	
 func _decrement(val):
-	set_pro
-	progress.value -= val
+	pass
+	#progress.value -= val
