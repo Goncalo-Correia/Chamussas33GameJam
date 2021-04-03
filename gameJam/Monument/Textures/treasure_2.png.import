@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sand_2.png-99709b5833a09bd1c26e2f07fee1f785.stex"
+path="res://.import/treasure_2.png-e18d4c6698e68c3b0adebbf24426c8b6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Map/sand_2.png"
-dest_files=[ "res://.import/sand_2.png-99709b5833a09bd1c26e2f07fee1f785.stex" ]
+source_file="res://Monument/Textures/treasure_2.png"
+dest_files=[ "res://.import/treasure_2.png-e18d4c6698e68c3b0adebbf24426c8b6.stex" ]
 
 [params]
 

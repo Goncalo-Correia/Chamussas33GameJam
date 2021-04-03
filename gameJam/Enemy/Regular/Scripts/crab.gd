@@ -2,12 +2,13 @@ extends KinematicBody2D
 
 enum STATES { IDLE, PATROLING, FLEEING, DEAD }
 var curr_state
-var speed = 80
+var speed = 40
 var player
 var rng = RandomNumberGenerator.new()
 var curr_direction = Vector2.ZERO
 
 onready var detection_area = $DetectionArea
+onready var collision = $MainCollisionDetector
 
 onready var idle_timer = $IdleTimer
 onready var patrolling_timer = $PatrollingTimer
@@ -16,6 +17,7 @@ onready var dead_timer = $DeadTimer
 onready var animation_player = $AnimationPlayer
 
 var patrol_timer_running = false
+var idle_timer_running = false
 
 func _ready():
 	rng = RandomNumberGenerator.new()
@@ -28,20 +30,25 @@ func _ready():
 	
 func _physics_process(delta):
 	match curr_state:
+		STATES.DEAD:
+			pass
+		STATES.FLEEING:
+			animation_player.play("flee")
+			if player != null:
+				 curr_direction = -global_position.direction_to(player.global_position)
+			pass
 		STATES.IDLE:
 			animation_player.play("idle")
+			if not idle_timer_running:
+				idle_timer_running = true
+				idle_timer.start()
 			pass
 		STATES.PATROLING:
 			if not patrol_timer_running:
 				patrolling_timer.start()
 				patrol_movement(delta)
 				patrol_timer_running = true
-				move_and_slide(curr_direction * speed, Vector2.UP)
-			pass
-		STATES.FLEEING:
-			pass
-		STATES.DEAD:
-			pass
+	position += curr_direction * speed * delta
 	pass
 	
 func patrol_movement(delta):
@@ -49,9 +56,8 @@ func patrol_movement(delta):
 	animation_player.play("walk")
 	rng.randomize()
 	var x = rng.randi_range(-1, 1)
-	rng.randomize()
 	var y = rng.randi_range(-1, 1)
-	var curr_direction = Vector2(x,y)
+	curr_direction = Vector2(x,y)
 	#move_and_slide(curr_direction * speed, Vector2.UP)
 	pass
 	
@@ -59,21 +65,29 @@ func fleeing_movement(delta):
 	pass
 	
 func _on_body_entered(body):
-	return
+	print("enter")
 	if curr_state == STATES.IDLE or curr_state == STATES.PATROLING:
 		curr_state = STATES.FLEEING
+		curr_direction = Vector2.ZERO
+		idle_timer_running = false
+		patrol_timer_running = false
+		idle_timer.stop()
+		patrolling_timer.stop()
+		player = body
 	pass
 	
 func _on_body_exited(body):
-	return
+	print("exit")
 	curr_state = STATES.IDLE
 	pass
 	
 func _on_patrol_end():
 	curr_state = STATES.IDLE
+	curr_direction = Vector2.ZERO
 	patrol_timer_running = false
 	
 func _on_idle_end():
 	curr_state = STATES.PATROLING
+	idle_timer_running = false
 
 
