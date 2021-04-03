@@ -5,7 +5,7 @@ var HARPOON_INSTANCE = preload("res://Weapon/Scenes/Harpoon.tscn")
 var KNIFE_INSTANCE = preload("res://Weapon/Scenes/Knife.tscn")
 enum WEAPONS { NET, KNIFE, HARPOON }
 var weapon_factory
-onready var player = $Player
+onready var player = $DeepSea/Player
 
 func _ready():
 	player.connect("shoot", self, "_on_player_shoot")
