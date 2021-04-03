@@ -4,7 +4,7 @@ class_name PersistentState
 
 var oxygen = 100
 var oxygen_depletion_modifier = 0.1
-onready var oxygen_ui = $Oxygen
+onready var oxygen_ui = $CanvasLayer/Oxygen
 
 onready var area = $Area2D
 
@@ -16,7 +16,7 @@ enum WEAPONS { NET, KNIFE, HARPOON }
 var curr_weapon
 onready var cursor = $Cursor
 onready var knife_cursor = $Position2D/KnifeCursor
-onready var weapon_ui = $WeaponUI
+onready var weapon_ui = $CanvasLayer/WeaponUI
 
 const ACCELARATION = 10;
 const MAX_SPEED = 100;

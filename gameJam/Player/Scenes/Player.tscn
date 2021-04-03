@@ -93,14 +93,17 @@ region_enabled = true
 region_rect = Rect2( 291.739, 18.2045, 7.75119, 13.252 )
 script = ExtResource( 5 )
 
-[node name="WeaponUI" parent="." instance=ExtResource( 6 )]
-margin_left = -251.281
-margin_top = 125.988
-margin_right = -251.281
-margin_bottom = 125.988
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Oxygen" parent="." instance=ExtResource( 7 )]
-margin_left = -250.59
-margin_top = -143.236
-margin_right = -250.59
-margin_bottom = -143.236
+[node name="Oxygen" parent="CanvasLayer" instance=ExtResource( 7 )]
+margin_left = 3.82187
+margin_top = 9.41064
+margin_right = 3.8219
+margin_bottom = 9.41064
+
+[node name="WeaponUI" parent="CanvasLayer" instance=ExtResource( 6 )]
+margin_left = 19.1028
+margin_top = 547.614
+margin_right = 19.1028
+margin_bottom = 547.614
+rect_scale = Vector2( 2, 2 )
