@@ -12,6 +12,7 @@
 [ext_resource path="res://Life/Scenes/FlockFishFactory.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D"]
+position = Vector2( 12.0844, 5.8338 )
 script = ExtResource( 3 )
 
 [node name="Map" parent="." instance=ExtResource( 5 )]
@@ -36,21 +37,41 @@ position = Vector2( 586.411, 114.27 )
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
 
 [node name="Factory1" parent="." instance=ExtResource( 10 )]
-position = Vector2( -261.316, 42.5193 )
+position = Vector2( -263.816, 22.9343 )
 direction = Vector2( 1, 0 )
 rot = 180
+frequency = 2
 
 [node name="Factory2" parent="." instance=ExtResource( 10 )]
-position = Vector2( -272.567, 57.9372 )
+position = Vector2( -249.648, 40.4358 )
 direction = Vector2( 1, 0 )
 rot = 180
+frequency = 2
 
 [node name="Factory3" parent="." instance=ExtResource( 10 )]
-position = Vector2( -279.651, 37.5188 )
+position = Vector2( -265.066, 55.0203 )
 direction = Vector2( 1, 0 )
 rot = 180
 
 [node name="Factory4" parent="." instance=ExtResource( 10 )]
-position = Vector2( -290.485, 50.0199 )
+position = Vector2( -253.815, 76.6887 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 3
+
+[node name="Factory5" parent="." instance=ExtResource( 10 )]
+position = Vector2( -265.066, 91.2733 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 4
+
+[node name="Factory6" parent="." instance=ExtResource( 10 )]
+position = Vector2( -286.318, 90.4398 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory7" parent="." instance=ExtResource( 10 )]
+position = Vector2( -284.651, 24.1844 )
 direction = Vector2( 1, 0 )
 rot = 180

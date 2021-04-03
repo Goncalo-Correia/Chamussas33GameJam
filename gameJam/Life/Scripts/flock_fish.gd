@@ -17,12 +17,19 @@ var colors = [ color_1,color_2,color_3,color_4,color_5,color_6,color_7,color_8,c
 
 var rng = RandomNumberGenerator.new()
 
+onready var timer = $Timer
+onready var animation_player = $AnimationPlayer
+
 var direction
 
 func _ready():
 	
+	timer.connect("timeout", self, "_timeout")
+	rng.randomize()
 	var color_index = rng.randi_range(0, 9)
-	modulate = colors[color_index]
+	print(color_index)
+	set_modulate(colors[color_index])
+	animation_player.play("act")
 	
 	
 func _physics_process(delta):
@@ -30,6 +37,9 @@ func _physics_process(delta):
 
 func _set_direction(dir):
 	direction = dir
+	
+func _timeout():
+	queue_free()
 	
 	
 	
