@@ -7,7 +7,7 @@
 extents = Vector2( 17.4105, 1.80676 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 274.636
+radius = 230.764
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 31.7705, 10 )
@@ -28,16 +28,20 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+rotation = -0.00151974
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 9.04165, 0.291672 )
 shape = SubResource( 3 )
 
 [node name="PatrollingTimer" type="Timer" parent="."]
+wait_time = 5.0
 
 [node name="IdleTimer" type="Timer" parent="."]

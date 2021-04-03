@@ -120,20 +120,20 @@ shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.156555, 0 )
-rotation = -0.0952835
+rotation = 0.0928891
 scale = Vector2( 1.03907, 1.05075 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 425.735, 0.260536, 14.7777, 15.4039 )
 
 [node name="Flipper_2" type="Sprite" parent="Sprite"]
 position = Vector2( -7.99973, 5.20946 )
-rotation = -0.864291
+rotation = -0.37567
 texture = ExtResource( 10 )
 offset = Vector2( 8.1563, -5.62277 )
 
 [node name="Flipper_1" type="Sprite" parent="Sprite"]
 position = Vector2( -7.74702, 7.41643 )
-rotation = -0.436671
+rotation = -0.961418
 texture = ExtResource( 10 )
 offset = Vector2( 7.88292, -5.12167 )
 
@@ -151,7 +151,7 @@ anims/move = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.8, 0.8 )
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 

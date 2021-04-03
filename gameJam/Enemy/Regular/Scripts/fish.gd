@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-enum STATES { IDLE, PATROLING, CHASING, DEAD }
+enum STATES { IDLE, PATROLING, FLEEING, DEAD }
 var curr_state
-var speed = 10
+var speed = 40
 var player
 var rng = RandomNumberGenerator.new()
 var curr_direction = Vector2.ZERO
@@ -12,6 +12,7 @@ onready var hitbox = $Hitbox
 
 onready var idle_timer = $IdleTimer
 onready var patrolling_timer = $PatrollingTimer
+onready var dead_timer = $DeadTimer
 
 onready var animation_player = $AnimationPlayer
 
@@ -33,19 +34,21 @@ func _ready():
 	
 func _physics_process(delta):
 	
-	
+	if is_dead:
+		$Angry.modulate.a -= 0.01
+		if $Angry.modulate.a <= 0:
+			queue_free()
+		return
 	
 	match curr_state:
 		STATES.DEAD:
 			animation_player.play("dead")
 			is_dead = true
 			pass
-		STATES.CHASING:
-			animation_player.play("chase")
+		STATES.FLEEING:
+			animation_player.play("flee")
 			if player != null:
-				look_at(player.global_position)
-			if player != null:
-				 curr_direction = global_position.direction_to(player.global_position)
+				 curr_direction = -global_position.direction_to(player.global_position)
 			pass
 		STATES.IDLE:
 			animation_player.play("idle")
@@ -76,7 +79,7 @@ func fleeing_movement(delta):
 func _on_body_entered(body):
 	print("enter")
 	if curr_state == STATES.IDLE or curr_state == STATES.PATROLING:
-		curr_state = STATES.CHASING
+		curr_state = STATES.FLEEING
 		curr_direction = Vector2.ZERO
 		idle_timer_running = false
 		patrol_timer_running = false
