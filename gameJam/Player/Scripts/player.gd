@@ -2,6 +2,12 @@ extends KinematicBody2D
 
 class_name PersistentState
 
+var oxygen = 100
+var oxygen_depletion_modifier = 0.1
+onready var oxygen_ui = $Oxygen
+
+onready var area = $Area2D
+
 var harpoons = 5
 var nets = 5
 
@@ -29,6 +35,7 @@ var direction = Vector2.DOWN;
 func _ready():
 	state_factory = StateFactory.new();
 	weapon_ui._set_player(self)
+	oxygen_ui._set_player(self)
 	curr_weapon = WEAPONS.NET
 	change_state("idle");
 	
@@ -102,3 +109,4 @@ func get_weapon():
 	
 func get_knife_cursor():
 	return knife_cursor
+	

@@ -7,6 +7,7 @@
 extents = Vector2( 2.98906, 2.76293 )
 
 [node name="Harpoon" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

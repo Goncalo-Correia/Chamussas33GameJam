@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Weapon/Scripts/knife.gd" type="Script" id=1]
 [ext_resource path="res://0x72_DungeonTilesetII_v1.3.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.90451, 1.94106 )
 
 [node name="Knife" type="Area2D"]
 script = ExtResource( 1 )
@@ -13,5 +16,7 @@ region_enabled = true
 region_rect = Rect2( 292.235, 16.9318, 7.26172, 14.899 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.09091, 0 )
+shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
