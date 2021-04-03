@@ -2,12 +2,19 @@ extends KinematicBody2D
 
 class_name PersistentState
 
+enum WEAPONS { NET, KNIFE, HARPOON }
+
+var curr_weapon
+onready var cursor = $Cursor
+
 const ACCELARATION = 10;
 const MAX_SPEED = 100;
 const FRICTION = 50;
 
 var state;
 var state_factory;
+
+signal shoot 
 
 var canMove = false;
 var velocity = Vector2.ZERO;
@@ -16,10 +23,21 @@ var direction = Vector2.DOWN;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_factory = StateFactory.new();
+	curr_weapon = WEAPONS.NET
 	change_state("idle");
+	
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		emit_signal("shoot", get_global_mouse_position().normalized())
 
 func _process(_delta):
 	
+	if Input.is_action_just_released("weapon_1"):
+		curr_weapon = WEAPONS.NET
+	elif Input.is_action_just_released("weapon_2"):
+		curr_weapon = WEAPONS.HARPOON
+	elif Input.is_action_just_released("weapon_3"):
+		curr_weapon = WEAPONS.KNIFE
 	
 	var up = Input.is_action_pressed("move_up")
 	var down = Input.is_action_pressed('move_down')
@@ -55,3 +73,9 @@ func change_state(new_state_name):
 	state.setup(funcref(self, "change_state"),$AnimationPlayer ,$Sprite, self);
 	state.name = "current_state";
 	add_child(state);
+	
+func get_cursor():
+	return cursor
+	
+func get_weapon():
+	return curr_weapon
