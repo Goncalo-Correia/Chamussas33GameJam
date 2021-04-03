@@ -501,13 +501,21 @@ func event_handler(event: Dictionary):
 		{'condition', 'definition', 'value', 'question_id', ..}:
 			# Treating this conditional as an option on a regular question event
 			var def_value = null
+			var event_value = null
 			var current_question = questions[event['question_id']]
+			
+			if (typeof(event['value']) == TYPE_STRING):
+				event_value = event['value']
+			else:
+				for event in definitions['variables']:
+					if event['value'] == event['definition']:
+						event_value = event['value']
 			
 			for d in definitions['variables']:
 				if d['id'] == event['definition']:
 					def_value = d['value']
 			
-			var condition_met = def_value != null and _compare_definitions(def_value, event['value'], event['condition']);
+			var condition_met = def_value != null and _compare_definitions(def_value, event_value, event['condition']);
 			
 			current_question['answered'] = !condition_met
 			if !condition_met:
