@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Textures/player.png" type="Texture" id=1]
 [ext_resource path="res://Player/Scripts/player.gd" type="Script" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Player/Scenes/KnifeCursor.gd" type="Script" id=5]
 [ext_resource path="res://UI/Weapon/Scenes/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Oxygen/Scenes/OxygenUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Shaders/WaterShaderMaterial.tres" type="Material" id=9]
+[ext_resource path="res://Camera/Camera_w_Limits.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.3364
@@ -76,9 +79,15 @@ shape = SubResource( 1 )
 anims/idle = SubResource( 2 )
 anims/move = SubResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" parent="." instance=ExtResource( 10 )]
 current = true
 zoom = Vector2( 0.5, 0.5 )
+smoothing_enabled = true
+
+[node name="UnderWaterShader" type="Sprite" parent="Camera2D"]
+material = ExtResource( 9 )
+scale = Vector2( 8, 5 )
+texture = ExtResource( 8 )
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 
