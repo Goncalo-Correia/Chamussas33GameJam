@@ -80,12 +80,6 @@ anims/move = SubResource( 3 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
-[node name="UnderSeaShader" type="Sprite" parent="Camera2D"]
-material = ExtResource( 9 )
-position = Vector2( -0.594604, -4.16223 )
-scale = Vector2( 9, 6 )
-texture = ExtResource( 8 )
-
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 
 [node name="Position2D" type="Position2D" parent="."]
