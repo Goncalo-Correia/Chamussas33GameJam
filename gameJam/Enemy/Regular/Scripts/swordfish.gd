@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 enum STATES { IDLE, PATROLING, CHASING, DEAD }
 var curr_state
-var speed = 40
+var speed = 10
 var player
 var rng = RandomNumberGenerator.new()
 var curr_direction = Vector2.ZERO
@@ -41,7 +41,7 @@ func _physics_process(delta):
 			is_dead = true
 			pass
 		STATES.CHASING:
-			animation_player.play("flee")
+			animation_player.play("chase")
 			if player != null:
 				look_at(player.global_position)
 			if player != null:
