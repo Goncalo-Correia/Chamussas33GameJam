@@ -1,1 +1,1 @@
-{"events":[{"character":"character-1617396120.json","portrait":"","text":"Hello my friend, how can i help you?"},{"change_timeline":"timeline-1617396127.json"}],"metadata":{"dialogic-version":"1.0","file":"timeline-1617406031.json","name":"OpenShop"}}
+{"events":[{"character":"character-1617396120.json","portrait":"","text":"Hello my friend, how can i help you? [money] [O2Bottle_Upgrade_Price]"},{"change_timeline":"timeline-1617396127.json"}],"metadata":{"dialogic-version":"1.0","file":"timeline-1617406031.json","name":"OpenShop"}}
