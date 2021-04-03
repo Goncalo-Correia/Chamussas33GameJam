@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Textures/player.png" type="Texture" id=1]
 [ext_resource path="res://Player/Scripts/player.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Player/Scenes/KnifeCursor.gd" type="Script" id=5]
 [ext_resource path="res://UI/Weapon/Scenes/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Oxygen/Scenes/OxygenUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Shaders/WaterShaderMaterial.tres" type="Material" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.3364
@@ -94,6 +96,12 @@ region_rect = Rect2( 291.739, 18.2045, 7.75119, 13.252 )
 script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+material = ExtResource( 9 )
+position = Vector2( 515.352, 279.525 )
+scale = Vector2( 16.0866, 10.0109 )
+texture = ExtResource( 8 )
 
 [node name="Oxygen" parent="CanvasLayer" instance=ExtResource( 7 )]
 margin_left = 3.82187
