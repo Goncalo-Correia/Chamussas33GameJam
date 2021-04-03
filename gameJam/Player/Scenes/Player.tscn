@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Player/Textures/player.png" type="Texture" id=1]
+[ext_resource path="res://Player/Textures/player_animation.png" type="Texture" id=1]
 [ext_resource path="res://Player/Scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://Player/Scenes/Cursor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://0x72_DungeonTilesetII_v1.3.png" type="Texture" id=4]
@@ -9,6 +9,7 @@
 [ext_resource path="res://UI/Oxygen/Scenes/OxygenUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://Shaders/WaterShaderMaterial.tres" type="Material" id=9]
+[ext_resource path="res://Player/Textures/barbatana.png" type="Texture" id=10]
 
 [sub_resource type="CircleShape2D" id=4]
 
@@ -18,7 +19,6 @@ height = 8.75865
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
-length = 0.6
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:rotation_degrees")
@@ -39,15 +39,38 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1.0709, 1.0921 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/Flipper_2:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -73.8673 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Flipper_1:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -64.1672, 5.85265 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "move"
-length = 0.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:rotation_degrees")
@@ -56,13 +79,38 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 12.2466, -12.1207 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Flipper_2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -11.1324, -70.0923 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/Flipper_1:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -66.2454, -2.92646 ]
+}
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( -78.7258, 44.3977 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 2 )
@@ -72,8 +120,22 @@ shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.156555, 0 )
+rotation = -0.0952835
+scale = Vector2( 1.03907, 1.05075 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 425.735, 0.260536, 14.7777, 15.4039 )
+
+[node name="Flipper_2" type="Sprite" parent="Sprite"]
+position = Vector2( -7.99973, 5.20946 )
+rotation = -0.864291
+texture = ExtResource( 10 )
+offset = Vector2( 8.1563, -5.62277 )
+
+[node name="Flipper_1" type="Sprite" parent="Sprite"]
+position = Vector2( -7.74702, 7.41643 )
+rotation = -0.436671
+texture = ExtResource( 10 )
+offset = Vector2( 7.88292, -5.12167 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 3
