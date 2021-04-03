@@ -2,9 +2,10 @@ extends KinematicBody2D
 
 enum STATES { IDLE, PATROLING, FLEEING, DEAD }
 var curr_state
-var speed = 20
+var speed = 80
 var player
 var rng = RandomNumberGenerator.new()
+var curr_direction = Vector2.ZERO
 
 onready var detection_area = $DetectionArea
 
@@ -32,8 +33,10 @@ func _physics_process(delta):
 			pass
 		STATES.PATROLING:
 			if not patrol_timer_running:
+				patrolling_timer.start()
 				patrol_movement(delta)
 				patrol_timer_running = true
+				move_and_slide(curr_direction * speed, Vector2.UP)
 			pass
 		STATES.FLEEING:
 			pass
@@ -42,13 +45,14 @@ func _physics_process(delta):
 	pass
 	
 func patrol_movement(delta):
+	
 	animation_player.play("walk")
 	rng.randomize()
 	var x = rng.randi_range(-1, 1)
 	rng.randomize()
 	var y = rng.randi_range(-1, 1)
-	var direction = Vector2(x,y)
-	move_and_slide(direction * speed, Vector2.UP)
+	var curr_direction = Vector2(x,y)
+	#move_and_slide(curr_direction * speed, Vector2.UP)
 	pass
 	
 func fleeing_movement(delta):
