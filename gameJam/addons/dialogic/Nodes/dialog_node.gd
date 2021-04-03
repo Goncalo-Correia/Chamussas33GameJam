@@ -504,12 +504,10 @@ func event_handler(event: Dictionary):
 			var event_value = null
 			var current_question = questions[event['question_id']]
 			
-			if (typeof(event['value']) == TYPE_STRING):
+			if (!event['value'].begins_with("[")):
 				event_value = event['value']
 			else:
-				for event in definitions['variables']:
-					if event['value'] == event['definition']:
-						event_value = event['value']
+				event_value = parse_definitions(event['value']);
 			
 			for d in definitions['variables']:
 				if d['id'] == event['definition']:

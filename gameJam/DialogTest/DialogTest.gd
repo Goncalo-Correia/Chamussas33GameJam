@@ -8,6 +8,8 @@ var dialog;
 var O2BottleLevel = 0;
 var lampLevel = 0;
 var diveSuitLevel = 0;
+var netsAmmout = 0;
+var harpoonsAmmout = 0;
 
 var shop;
 
@@ -16,20 +18,31 @@ func _ready():
 
 func _on_Dialogic_Signal(event):
 	print(event);
+	
 	if(event == "UpgradeO2Bottle"):
-		money -= shop.upgradePrices[O2BottleLevel];
+		money -= upgradePrices[O2BottleLevel];
 		O2BottleLevel += 1;
-	if(event == "UpgradeLamp"):
+	elif(event == "UpgradeLamp"):
+		money -= upgradePrices[lampLevel];
 		lampLevel += 1;
-	if(event == "UpgradeDiveSuit"):
+	elif(event == "UpgradeDiveSuit"):
+		money -= upgradePrices[diveSuitLevel];
 		diveSuitLevel += 1;
+	elif(event == "BuyFishingNet"):
+		netsAmmout += 1;
+		money -= 50;
+	elif(event == "BuyHarpoon"):
+		harpoonsAmmout += 1;
+		money -= 100;
+		
 	setDialogVariables();
 	
 func _on_Event_Start(action, event):
-	print("ACTION:");
-	print(action)
-	print("EVENT:")
-	print(event)
+	pass
+#	print("ACTION:");
+#	print(action)
+#	print("EVENT:")
+#	print(event)
 
 func _on_startDialog(timeline):
 	dialog = Dialogic.start(timeline, false, "res://addons/dialogic/Dialog.tscn", false)
@@ -46,4 +59,4 @@ func setDialogVariables():
 	Dialogic.set_variable("lamp_Upgrade_Price", upgradePrices[lampLevel]);
 	Dialogic.set_variable("diveSuit_Max_Level", diveSuitLevel == 3);
 	Dialogic.set_variable("diveSuit_Upgrade_Price", upgradePrices[diveSuitLevel]);
-#	print(Dialogic.get_definitions());
+	print(Dialogic.get_definitions());
