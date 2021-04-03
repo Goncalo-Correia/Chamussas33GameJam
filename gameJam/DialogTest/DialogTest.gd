@@ -48,5 +48,7 @@ func setDialogVariables():
 	Dialogic.set_variable("Money", money)
 	Dialogic.set_variable("O2Bottle_Max_Level", O2BottleLevel == 3);
 	Dialogic.set_variable("O2Bottle_Upgrade_Price", shop.upgradePrices[O2BottleLevel]);
-	Dialogic.set_variable("Lamp_Upgrade_Price", shop.upgradePrices[lampLevel]);
-	Dialogic.set_variable("DiveSuit_Upgrade_Price", shop.upgradePrices[diveSuitLevel]);
+	Dialogic.set_variable("lamp_Max_Level", lampLevel == 3);
+	Dialogic.set_variable("lamp_Upgrade_Price", shop.upgradePrices[lampLevel]);
+	Dialogic.set_variable("diveSuit_Max_Level", diveSuitLevel == 3);
+	Dialogic.set_variable("diveSuit_Upgrade_Price", shop.upgradePrices[diveSuitLevel]);
