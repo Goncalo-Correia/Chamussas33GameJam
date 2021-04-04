@@ -37,7 +37,10 @@ func _ready():
 	net_timer.connect("timeout", self,"_net_timeout")
 	
 func _physics_process(delta):
+	
+	
 	if is_dead:
+		animation_player.play("dead")
 		$Dead.modulate.a -= 0.01
 		if $Dead.modulate.a <= 0:
 			queue_free()
@@ -54,39 +57,16 @@ func _physics_process(delta):
 			$CollisionShape2D.position.x = -$CollisionShape2D.position.x 
 		elif curr_direction.x > 0 and $Main.flip_h:
 			$Main.flip_h = not $Main.flip_h
-			$CollisionShape2D.position.x = -$CollisionShape2D.position.x 
-		return
-	
-	match curr_state:
-		STATES.DEAD:
-			animation_player.play("dead")
-			is_dead = true
-			pass
-		STATES.CHASING:
-			animation_player.play("chase")
-			if player != null:
-				 curr_direction = global_position.direction_to(player.global_position)
-			pass
-		STATES.IDLE:
-			animation_player.play("idle")
-			if not idle_timer_running:
-				idle_timer_running = true
-				idle_timer.start()
-			pass
-		STATES.PATROLING:
-			if not patrol_timer_running:
-				patrolling_timer.start()
-				patrol_movement(delta)
-				patrol_timer_running = true
+			$CollisionShape2D.position.x = -$CollisionShape2D.position.x
 				
-	if curr_direction.x < 0 and not $Main.flip_h:
-		$Main.flip_h = not $Main.flip_h
-		$CollisionShape2D.position.x = -$CollisionShape2D.position.x 
-	elif curr_direction.x > 0 and $Main.flip_h:
-		$Main.flip_h = not $Main.flip_h
-		$CollisionShape2D.position.x = -$CollisionShape2D.position.x 
+		if curr_direction.x < 0 and not $Main.flip_h:
+			$Main.flip_h = not $Main.flip_h
+			$CollisionShape2D.position.x = -$CollisionShape2D.position.x 
+		elif curr_direction.x > 0 and $Main.flip_h:
+			$Main.flip_h = not $Main.flip_h
+			$CollisionShape2D.position.x = -$CollisionShape2D.position.x 
 	
-	position += curr_direction * speed * delta
+		position += curr_direction * speed * delta
 	pass
 	
 func patrol_movement(delta):
@@ -137,23 +117,31 @@ func _on_kill(body):
 	patrolling_timer.stop()
 	life -= 2
 	if life <= 0:
+		is_dead = true
+		if( player != null):
+			player.score += 23
 		curr_state = STATES.DEAD
 	else:
 		curr_state = STATES.IDLE
 	
 func _area_entered(area):
 	if area.weapon_type == "net":
-		print("netted")
 		netted = true
 		$Net.visible = true
 		net_timer.start()
-	else:
-		idle_timer.stop()
-		patrolling_timer.stop()
+		area.queue_free()
+		
+	elif area.weapon_type == "knife":
 		life -= 1
-		if life <= 0:
-			curr_state = STATES.DEAD
-		else:
-			curr_state = STATES.IDLE
+	idle_timer.stop()
+	patrolling_timer.stop()
+	life -= 1
+	if life <= 0:
+		is_dead = true
+		if( player != null):
+			player.score += 18
+		curr_state = STATES.DEAD
+	else:
+		curr_state = STATES.IDLE
 
 

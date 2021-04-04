@@ -2,7 +2,7 @@ extends Area2D
 
 
 var player
-
+var _body_type = "oxygen"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

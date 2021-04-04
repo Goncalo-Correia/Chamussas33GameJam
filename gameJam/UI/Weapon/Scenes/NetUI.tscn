@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player/Textures/colored_transparent.png" type="Texture" id=1]
+[ext_resource path="res://Weapon/Textures/rede.png" type="Texture" id=1]
 [ext_resource path="res://UI/Weapon/Scripts/ui_consumable.gd" type="Script" id=2]
 [ext_resource path="res://UI/Weapon/Scenes/UiBoxContainer.tscn" type="PackedScene" id=3]
 
@@ -14,8 +14,8 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 4.74097, 5.19249 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-region_enabled = true
 region_rect = Rect2( 441.46, 238.449, 17.4349, 15.9188 )
 
 [node name="Label" type="Label" parent="."]

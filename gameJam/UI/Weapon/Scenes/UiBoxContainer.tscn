@@ -17,7 +17,7 @@ region_rect = Rect2( 662.58, 237.895, 17.0146, 16.264 )
 script = ExtResource( 2 )
 
 [node name="NumberContainer" type="Sprite" parent="."]
-modulate = Color( 0.141176, 0.188235, 0.85098, 1 )
+modulate = Color( 0.898039, 0.584314, 0.584314, 1 )
 position = Vector2( -0.410837, -7.6005 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
@@ -25,6 +25,8 @@ region_enabled = true
 region_rect = Rect2( 665.146, 222.587, 11.7997, 12.9668 )
 
 [node name="Label" type="Label" parent="."]
+anchor_top = -0.00218123
+anchor_bottom = -0.00218125
 margin_left = -2.7436
 margin_top = -12.0275
 margin_right = 37.2564

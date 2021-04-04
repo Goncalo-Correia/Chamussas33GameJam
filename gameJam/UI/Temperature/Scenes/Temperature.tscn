@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Temperature/Textures/temperature_low.png" type="Texture" id=1]
+[ext_resource path="res://UI/Temperature/Textures/temperature_full.png" type="Texture" id=2]
+[ext_resource path="res://UI/Temperature/Scenes/Temperature.gd" type="Script" id=3]
+
+[node name="Temperature" type="Control"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+max_value = 5000.0
+value = 5000.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+fill_mode = 3
