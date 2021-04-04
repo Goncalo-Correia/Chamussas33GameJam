@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://LobbyButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/EightBitDragon-anqx.ttf" type="DynamicFontData" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Enemy/Regular/Textures/crab_2.png" type="Texture" id=15]
 [ext_resource path="res://Shaders/WaterShaderMaterial.tres" type="Material" id=16]
 [ext_resource path="res://icon.png" type="Texture" id=17]
+[ext_resource path="res://Fonts/GameNormalFont.tres" type="DynamicFont" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -26,7 +27,6 @@ font_data = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="LobbyNode" type="Node2D" parent="."]
-visible = false
 
 [node name="WaterTileMap" type="TileMap" parent="LobbyNode"]
 tile_set = ExtResource( 4 )
@@ -42,7 +42,7 @@ tile_data = PoolIntArray( 917504, 1, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0
 
 [node name="Shader" type="Sprite" parent="LobbyNode"]
 material = ExtResource( 16 )
-position = Vector2( 497.811, 269.087 )
+position = Vector2( 497.811, 270.869 )
 scale = Vector2( 18, 12 )
 texture = ExtResource( 17 )
 
@@ -63,20 +63,21 @@ tile_data = PoolIntArray( -65538, 1610612744, 0, -65537, 1610612744, 0, -131072,
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 3.56348
-margin_right = 418.563
+margin_right = 1027.56
 margin_bottom = 454.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="LobbyNode/VBoxContainer"]
-margin_right = 415.0
+margin_right = 1024.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 0, 300 )
 
 [node name="Label" type="Label" parent="LobbyNode/VBoxContainer/CenterContainer"]
+margin_left = 304.0
 margin_top = 125.0
-margin_right = 415.0
+margin_right = 719.0
 margin_bottom = 175.0
 rect_pivot_offset = Vector2( 70, 0 )
 custom_fonts/font = SubResource( 1 )
@@ -86,54 +87,30 @@ valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LobbyNode/VBoxContainer"]
 margin_top = 304.0
-margin_right = 415.0
+margin_right = 1024.0
 margin_bottom = 454.0
 rect_min_size = Vector2( 0, 150 )
 alignment = 1
 
 [node name="StartGame" parent="LobbyNode/VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 9.0
-margin_right = 415.0
-margin_bottom = 39.0
+margin_top = 43.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 0, 30 )
 focus_neighbour_top = NodePath("../ExitGame")
-focus_neighbour_bottom = NodePath("../HowToPlay")
+focus_neighbour_bottom = NodePath("../ExitGame")
 focus_mode = 1
 button_text = "Start"
 fish_margin_from_center = 70
 
-[node name="HowToPlay" parent="LobbyNode/VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 43.0
-margin_right = 415.0
-margin_bottom = 73.0
-rect_min_size = Vector2( 0, 30 )
-focus_neighbour_top = NodePath("../StartGame")
-focus_neighbour_bottom = NodePath("../ExitGame")
-focus_mode = 1
-button_text = "How to play"
-fish_margin_from_center = 90
-
 [node name="ExitGame" parent="LobbyNode/VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 77.0
-margin_right = 415.0
 margin_bottom = 107.0
 rect_min_size = Vector2( 0, 30 )
-focus_neighbour_top = NodePath("../HowToPlay")
+focus_neighbour_top = NodePath("../StartGame")
 focus_neighbour_bottom = NodePath("../StartGame")
 focus_mode = 1
 button_text = "Exit"
 fish_margin_from_center = 60
-
-[node name="BackToGame" parent="LobbyNode/VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 111.0
-margin_right = 415.0
-margin_bottom = 141.0
-rect_min_size = Vector2( 0, 30 )
-focus_neighbour_top = NodePath("../ExitGame")
-focus_neighbour_bottom = NodePath("../HowToPlay")
-focus_mode = 1
-button_text = "Start"
-fish_margin_from_center = 70
 
 [node name="BigRockLeft" type="Sprite" parent="LobbyNode"]
 position = Vector2( 137.73, 483.115 )
@@ -148,19 +125,31 @@ position = Vector2( 233.488, 525.783 )
 texture = ExtResource( 9 )
 
 [node name="BigRockRight" type="Sprite" parent="LobbyNode"]
-position = Vector2( 700.344, 484.286 )
+position = Vector2( 595.218, 464.686 )
+texture = ExtResource( 6 )
+
+[node name="BigRockRight2" type="Sprite" parent="LobbyNode"]
+position = Vector2( 965.083, 571.042 )
 texture = ExtResource( 6 )
 
 [node name="MediumRockRight" type="Sprite" parent="LobbyNode"]
-position = Vector2( 807.956, 517.243 )
+position = Vector2( 467.633, 572.479 )
+texture = ExtResource( 7 )
+
+[node name="MediumRockRight02" type="Sprite" parent="LobbyNode"]
+position = Vector2( 797.26, 575.475 )
 texture = ExtResource( 7 )
 
 [node name="SmallRockRight" type="Sprite" parent="LobbyNode"]
-position = Vector2( 906.916, 557.788 )
+position = Vector2( 326.05, 575.606 )
 texture = ExtResource( 9 )
 
 [node name="SmallRockRight2" type="Sprite" parent="LobbyNode"]
-position = Vector2( 718.015, 564.138 )
+position = Vector2( 605.762, 565.92 )
+texture = ExtResource( 9 )
+
+[node name="SmallRockRight3" type="Sprite" parent="LobbyNode"]
+position = Vector2( 743.397, 481.733 )
 texture = ExtResource( 9 )
 
 [node name="SeaWeedLeft01" type="Sprite" parent="LobbyNode"]
@@ -194,37 +183,27 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 
 [node name="SeaWeedRight01" type="Sprite" parent="LobbyNode"]
-position = Vector2( 971.482, 485.924 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 8 )
-
-[node name="SeaWeedRight02" type="Sprite" parent="LobbyNode"]
-position = Vector2( 853.703, 572.205 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 8 )
-
-[node name="SeaWeedRight03" type="Sprite" parent="LobbyNode"]
-position = Vector2( 880.465, 471.765 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 8 )
-
-[node name="SeaWeedRight04" type="Sprite" parent="LobbyNode"]
-position = Vector2( 755.739, 466.42 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 8 )
-
-[node name="SeaWeedRight05" type="Sprite" parent="LobbyNode"]
 position = Vector2( 677.34, 537.692 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 
-[node name="SeaWeedRight06" type="Sprite" parent="LobbyNode"]
-position = Vector2( 964.209, 591.146 )
+[node name="SeaWeedRight02" type="Sprite" parent="LobbyNode"]
+position = Vector2( 799.57, 504.357 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 
-[node name="SeaWeedRight07" type="Sprite" parent="LobbyNode"]
+[node name="SeaWeedRight03" type="Sprite" parent="LobbyNode"]
 position = Vector2( 533.802, 581.707 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+
+[node name="SeaWeedRight04" type="Sprite" parent="LobbyNode"]
+position = Vector2( 969.422, 490.07 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+
+[node name="SeaWeedRight05" type="Sprite" parent="LobbyNode"]
+position = Vector2( 886.877, 553.566 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 
@@ -249,7 +228,7 @@ position = Vector2( 146.834, 200.773 )
 texture = ExtResource( 12 )
 
 [node name="Fish02" type="Sprite" parent="LobbyNode"]
-position = Vector2( 834.557, 374.577 )
+position = Vector2( 818.064, 312.323 )
 texture = ExtResource( 12 )
 
 [node name="Fish03" type="Sprite" parent="LobbyNode"]
@@ -265,19 +244,54 @@ position = Vector2( 230.739, 566.36 )
 texture = ExtResource( 5 )
 
 [node name="Crab02" type="Sprite" parent="LobbyNode"]
-position = Vector2( 782.116, 569.357 )
+position = Vector2( 108.597, 528.376 )
 texture = ExtResource( 15 )
 
 [node name="Crab03" type="Sprite" parent="LobbyNode"]
 position = Vector2( 611.309, 512.421 )
 texture = ExtResource( 11 )
 
+[node name="Crab04" type="Sprite" parent="LobbyNode"]
+position = Vector2( 869.818, 489.113 )
+texture = ExtResource( 11 )
+
 [node name="Player" type="Sprite" parent="LobbyNode"]
 position = Vector2( 514.309, 474.455 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 10 )
+
+[node name="WeaponLabel" type="Label" parent="LobbyNode"]
+margin_left = 736.528
+margin_top = 366.599
+margin_right = 960.528
+margin_bottom = 388.599
+custom_fonts/font = ExtResource( 18 )
+text = "1, 2, 3 - Choose weapon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLabel" type="Label" parent="LobbyNode"]
+margin_left = 736.773
+margin_top = 391.995
+margin_right = 1003.77
+margin_bottom = 408.995
+custom_fonts/font = ExtResource( 18 )
+text = "W, A, S, D - Player movement"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FireWeaponLabel" type="Label" parent="LobbyNode"]
+margin_left = 735.883
+margin_top = 416.941
+margin_right = 953.883
+margin_bottom = 433.941
+custom_fonts/font = ExtResource( 18 )
+text = "Righ click - Fire weaon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
-[connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/HowToPlay" to="." method="_on_HowToPlay_pressed"]
-[connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" method="_on_ExitGame_pressed"]
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]
-[connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/BackToGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" method="_on_ExitGame_pressed"]
