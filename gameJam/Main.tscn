@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Particles/Scenes/Oxygen.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Weapon/Scripts/weapon_factory.gd" type="Script" id=4]
 [ext_resource path="res://Map/Tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://Enemy/Regular/Scenes/Crab.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Lobby.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemy/Regular/Scenes/Shark.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemy/Regular/Scenes/Fish.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Life/Scenes/FlockFishFactory.tscn" type="PackedScene" id=10]
@@ -14,6 +15,8 @@
 [node name="Main" type="Node2D"]
 position = Vector2( 12.0844, 5.8338 )
 script = ExtResource( 3 )
+
+[node name="Lobby" parent="." instance=ExtResource( 7 )]
 
 [node name="DeepSea" type="Node2D" parent="."]
 
