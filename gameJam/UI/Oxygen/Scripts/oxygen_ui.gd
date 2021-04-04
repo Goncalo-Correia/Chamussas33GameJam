@@ -16,3 +16,6 @@ func _set_value(val):
 	
 func _decrement(val):
 	progress.value -= val
+	
+func get_value():
+	return progress.value

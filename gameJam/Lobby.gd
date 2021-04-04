@@ -1,8 +1,9 @@
 extends Node
 
 func _ready():
-	$LobbyNode/LobbySoundtrack.play()
-	$LobbyNode/VBoxContainer/VBoxContainer/StartGame.grab_focus()
+	if $LobbyNode.visible:
+		$LobbyNode/LobbySoundtrack.play()
+		$LobbyNode/VBoxContainer/VBoxContainer/StartGame.grab_focus()
 
 func _on_StartGame_pressed():
 	$LobbyNode/LobbySoundtrack.stop()

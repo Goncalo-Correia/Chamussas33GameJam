@@ -40,6 +40,7 @@ func _ready():
 func _physics_process(delta):
 	
 	if is_dead:
+		animation_player.play("dead")
 		$Dead.modulate.a -= 0.01
 		if $Dead.modulate.a <= 0:
 			queue_free()
@@ -122,7 +123,10 @@ func _on_kill(body):
 	patrolling_timer.stop()
 	life -= 2
 	if life <= 0:
+		if( player != null):
+			player.score += 27
 		curr_state = STATES.DEAD
+		is_dead = true
 	else:
 		curr_state = STATES.IDLE
 		
@@ -135,13 +139,17 @@ func _area_entered(area):
 		print("netted")
 		netted = true
 		$Net.visible = true
+		area.queue_free()
 		net_timer.start()
 	else:
 		idle_timer.stop()
 		patrolling_timer.stop()
 		life -= 1
 		if life <= 0:
+			if( player != null):
+				player.score += 30
 			curr_state = STATES.DEAD
+			is_dead = true
 		else:
 			curr_state = STATES.IDLE
 

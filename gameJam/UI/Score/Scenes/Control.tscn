@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Score/Scenes/Score.gd" type="Script" id=1]
+[ext_resource path="res://UI/Score/Textures/coins.png" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.885994, -1.39427 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -7.02477, 5.41493 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 9.07365, 5.12223 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 20.6353
+margin_right = 60.6353
+margin_bottom = 14.0
+text = "x0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
