@@ -14,10 +14,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LeftFish" type="Sprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 1 )
+
+[node name="RightFish" type="Sprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 1 )
+flip_h = true
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 0 )
+mouse_filter = 2
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center] Start [center]"
@@ -25,12 +35,6 @@ text = " Start "
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="FishLeft" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 1 )
-
-[node name="FishRight" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 1 )
-flip_h = true
+[connection signal="focus_entered" from="." to="." method="_on_TextureButton_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_TextureButton_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_TextureButton_mouse_entered"]
