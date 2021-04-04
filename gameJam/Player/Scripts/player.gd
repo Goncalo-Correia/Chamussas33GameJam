@@ -70,6 +70,9 @@ func _process(_delta):
 	
 	if oxygen_ui.get_value() <= 0 or temperature_ui.get_value() <= 0:
 		die()
+		
+	print(oxygen_ui.get_value())
+	
 	
 	if oxygen_ui.get_value() < 2500:
 		heart_ui.set_animation("accelerated")
@@ -140,5 +143,6 @@ func _on_body_exited(body):
 	pass
 	
 func die():
+	print ("DIIE")
 	emit_signal("die")
 	

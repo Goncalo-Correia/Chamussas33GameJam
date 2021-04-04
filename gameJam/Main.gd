@@ -7,9 +7,15 @@ enum WEAPONS { NET, KNIFE, HARPOON }
 var weapon_factory
 onready var player = $DeepSea/Player
 
+signal end
+
 func _ready():
 	player.connect("shoot", self, "_on_player_shoot")
+	player.connect("die", self,"_on_die")
 	weapon_factory = WeaponFactory.new()
+	
+func _on_die():
+	emit_signal("end")
 
 func _on_player_shoot(dir):
 	var instance

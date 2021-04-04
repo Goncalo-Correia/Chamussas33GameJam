@@ -4,13 +4,13 @@ onready var soundTrack01 = $SoundTrack01
 onready var soundTrack02 = $SoundTrack02
 onready var soundTrack03 = $SoundTrack03
 onready var seaAmbienceSound = $SeaAmbience
+
+var weapon_factory
+
 onready var player = $Player
 
 var collected = 0
-
-func _ready():
-	soundTrack01.play()
-	seaAmbienceSound.play()
+	
 
 func _on_SoundTrack01_finished():
 	soundTrack02.play()

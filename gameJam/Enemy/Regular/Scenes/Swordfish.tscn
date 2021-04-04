@@ -61,7 +61,7 @@ extents = Vector2( 31.7705, 10 )
 
 [node name="Swordfish" type="KinematicBody2D"]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 524288
 script = ExtResource( 2 )
 
 [node name="Main" type="Sprite" parent="."]
@@ -98,7 +98,7 @@ anims/idle = SubResource( 5 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( -12.8322, 0.818993 )

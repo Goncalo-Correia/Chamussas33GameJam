@@ -115,6 +115,7 @@ tracks/2/keys = {
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -78.7258, 44.3977 )
 collision_layer = 1057
+collision_mask = 524817
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -141,6 +142,7 @@ offset = Vector2( 7.88292, -5.12167 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2( 3.11119, 1.77854 )
+collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, 0.0882492 )
