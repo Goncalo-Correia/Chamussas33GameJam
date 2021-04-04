@@ -71,7 +71,6 @@ func _process(_delta):
 	if oxygen_ui.get_value() <= 0 or temperature_ui.get_value() <= 0:
 		die()
 		
-	print(oxygen_ui.get_value())
 	
 	
 	if oxygen_ui.get_value() < 2500:

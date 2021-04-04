@@ -3,9 +3,8 @@ extends Node
 signal start
 
 func _ready():
-	if $LobbyNode.visible:
-		$LobbyNode/LobbySoundtrack.play()
-		$LobbyNode/VBoxContainer/VBoxContainer/StartGame.grab_focus()
+	$LobbyNode/LobbySoundtrack.play()
+	$LobbyNode/VBoxContainer/VBoxContainer/StartGame.grab_focus()
 
 func _on_StartGame_pressed():
 	emit_signal("start")
