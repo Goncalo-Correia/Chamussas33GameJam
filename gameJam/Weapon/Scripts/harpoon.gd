@@ -4,11 +4,12 @@ var direction
 var speed = 180
 var player
 
+var weapon_type = "harpoon"
 
 func _ready():
 	look_at(get_global_mouse_position())
 	self.linear_velocity = direction * speed
-	player.area.connect("body_entered", self, "_player_pickup")
+	player.hitbox.connect("body_entered", self, "_player_pickup")
 
 func _integrate_forces(state):
 	pass

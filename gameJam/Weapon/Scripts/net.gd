@@ -8,6 +8,8 @@ onready var sprite = $Sprite
 
 const DISSOLVING_RATIO = 0.05
 
+var weapon_type = "net"
+
 onready var animation_player = $AnimationPlayer
 
 func _ready():

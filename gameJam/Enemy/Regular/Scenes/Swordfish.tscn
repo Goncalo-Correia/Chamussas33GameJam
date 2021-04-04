@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Enemy/Regular/Textures/fish_2.png" type="Texture" id=1]
 [ext_resource path="res://Enemy/Regular/Scripts/swordfish.gd" type="Script" id=2]
 [ext_resource path="res://Enemy/Regular/Textures/fish_2_dead.png" type="Texture" id=3]
+[ext_resource path="res://Weapon/Textures/rede.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.4105, 1.16986 )
@@ -59,6 +60,8 @@ resource_name = "idle"
 extents = Vector2( 31.7705, 10 )
 
 [node name="Swordfish" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Main" type="Sprite" parent="."]
@@ -69,14 +72,17 @@ visible = false
 rotation = 3.13001
 texture = ExtResource( 3 )
 
+[node name="Net" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 3.0176, 0.711875 )
+texture = ExtResource( 4 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 27.1428, 0.938064 )
 rotation = -0.00950909
 shape = SubResource( 1 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2( -0.48346, -0.751831 )
@@ -89,8 +95,8 @@ anims/dead = SubResource( 5 )
 anims/idle = SubResource( 6 )
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( -12.8322, 0.818993 )
@@ -100,3 +106,5 @@ shape = SubResource( 3 )
 wait_time = 5.0
 
 [node name="IdleTimer" type="Timer" parent="."]
+
+[node name="NetTimer" type="Timer" parent="."]

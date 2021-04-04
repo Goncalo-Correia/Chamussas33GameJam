@@ -6,6 +6,7 @@ var speed = 40
 var player
 var rng = RandomNumberGenerator.new()
 var curr_direction = Vector2.ZERO
+var netted = false
 
 onready var detection_area = $DetectionArea
 onready var hitbox = $Hitbox
@@ -13,6 +14,7 @@ onready var hitbox = $Hitbox
 onready var idle_timer = $IdleTimer
 onready var patrolling_timer = $PatrollingTimer
 onready var dead_timer = $DeadTimer
+onready var net_timer = $NetTimer
 
 onready var animation_player = $AnimationPlayer
 
@@ -21,6 +23,7 @@ var idle_timer_running = false
 
 var is_dead = false
 
+
 func _ready():
 	rng = RandomNumberGenerator.new()
 	curr_state = STATES.PATROLING
@@ -28,9 +31,12 @@ func _ready():
 	detection_area.connect("body_exited", self, "_on_body_exited")
 	
 	hitbox.connect("body_entered", self,"_on_kill")
+	hitbox.connect("area_entered", self, "_area_entered")
 	
 	patrolling_timer.connect("timeout", self, "_on_patrol_end")
 	idle_timer.connect("timeout",self,"_on_idle_end")
+	net_timer.connect("timeout", self,"_net_timeout")
+	
 	
 func _physics_process(delta):
 	
@@ -39,6 +45,9 @@ func _physics_process(delta):
 		if $Dead.modulate.a <= 0:
 			queue_free()
 		return
+	elif netted:
+		return
+		
 	
 	match curr_state:
 		STATES.DEAD:
@@ -61,6 +70,7 @@ func _physics_process(delta):
 				patrolling_timer.start()
 				patrol_movement(delta)
 				patrol_timer_running = true
+	
 	position += curr_direction * speed * delta
 	pass
 	
@@ -77,7 +87,6 @@ func fleeing_movement(delta):
 	pass
 	
 func _on_body_entered(body):
-	print("enter")
 	if curr_state == STATES.IDLE or curr_state == STATES.PATROLING:
 		curr_state = STATES.FLEEING
 		curr_direction = Vector2.ZERO
@@ -89,7 +98,6 @@ func _on_body_entered(body):
 	pass
 	
 func _on_body_exited(body):
-	print("exit")
 	curr_state = STATES.IDLE
 	pass
 	
@@ -102,9 +110,24 @@ func _on_idle_end():
 	curr_state = STATES.PATROLING
 	idle_timer_running = false
 	
+func _net_timeout():
+	netted = false
+	$Net.visible = false
+	
 func _on_kill(body):
 	idle_timer.stop()
 	patrolling_timer.stop()
 	curr_state = STATES.DEAD
+	
+func _area_entered(area):
+	if area.weapon_type == "net":
+		print("netted")
+		netted = true
+		$Net.visible = true
+		net_timer.start()
+	else:
+		idle_timer.stop()
+		patrolling_timer.stop()
+		curr_state = STATES.DEAD
 
 

@@ -10,12 +10,12 @@
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://Shaders/WaterShaderMaterial.tres" type="Material" id=9]
 [ext_resource path="res://Player/Textures/barbatana.png" type="Texture" id=10]
-[ext_resource path="res://Textures/light.png" type="Texture" id=11]
+[ext_resource path="res://Textures/light2d_3.png" type="Texture" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 3.3364
+radius = 6.11765
 height = 8.75865
 
 [sub_resource type="Animation" id=3]
@@ -110,8 +110,7 @@ tracks/2/keys = {
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -78.7258, 44.3977 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 33
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -136,11 +135,10 @@ rotation = -0.961418
 texture = ExtResource( 10 )
 offset = Vector2( 7.88292, -5.12167 )
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2( 3.11119, 1.77854 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, 0.0882492 )
 shape = SubResource( 2 )
 
@@ -174,18 +172,25 @@ scale = Vector2( 16.0866, 10.0109 )
 texture = ExtResource( 8 )
 
 [node name="Oxygen" parent="CanvasLayer" instance=ExtResource( 7 )]
-margin_left = 3.82187
-margin_top = 9.41064
-margin_right = 3.8219
-margin_bottom = 9.41064
+margin_left = -2.15445
+margin_top = 7.91656
+margin_right = -2.15442
+margin_bottom = 7.91656
 
 [node name="WeaponUI" parent="CanvasLayer" instance=ExtResource( 6 )]
-margin_left = 19.1028
+margin_left = 16.8617
 margin_top = 547.614
-margin_right = 19.1028
+margin_right = 16.8617
 margin_bottom = 547.614
 rect_scale = Vector2( 2, 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 19.1004, 3.12576 )
+scale = Vector2( 0.996143, 1 )
 texture = ExtResource( 11 )
-texture_scale = 0.5
+texture_scale = 1.5
+color = Color( 0.639216, 0.662745, 0.870588, 1 )
+shadow_enabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2( 0.0184017, -0.0120522 )

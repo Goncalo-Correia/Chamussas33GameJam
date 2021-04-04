@@ -6,7 +6,7 @@ var oxygen = 100
 var oxygen_depletion_modifier = 1
 onready var oxygen_ui = $CanvasLayer/Oxygen
 
-onready var area = $Area2D
+onready var hitbox = $Hitbox
 
 var harpoons = 5
 var nets = 5
@@ -37,7 +37,10 @@ func _ready():
 	weapon_ui._set_player(self)
 	oxygen_ui._set_player(self)
 	curr_weapon = WEAPONS.NET
+	hitbox.connect("body_entered",self,"_on_body_entered")
+	hitbox.connect("body_exited",self,"_on_body_exited")
 	change_state("idle");
+	
 	
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -55,6 +58,8 @@ func _input(event):
 		emit_signal("shoot", get_global_mouse_position().normalized())
 
 func _process(_delta):
+	
+	print("Oxygen " + str(oxygen_depletion_modifier) )
 	
 	if Input.is_action_just_released("weapon_1"):
 		knife_cursor.visible = false
@@ -109,4 +114,12 @@ func get_weapon():
 	
 func get_knife_cursor():
 	return knife_cursor
+	
+func _on_body_entered(body):
+	oxygen_depletion_modifier = 3
+	pass
+	
+func _on_body_exited(body):
+	oxygen_depletion_modifier = 1
+	pass
 	
