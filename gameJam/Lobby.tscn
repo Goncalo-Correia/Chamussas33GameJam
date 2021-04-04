@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://LobbyButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/EightBitDragon-anqx.ttf" type="DynamicFontData" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Shaders/WaterShaderMaterial.tres" type="Material" id=16]
 [ext_resource path="res://icon.png" type="Texture" id=17]
 [ext_resource path="res://Fonts/GameNormalFont.tres" type="DynamicFont" id=18]
+[ext_resource path="res://Sounds/SoundTracks/Soundtrack_Lobby.wav" type="AudioStream" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -70,7 +71,7 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="LobbyNode/VBoxContainer"]
-margin_right = 1024.0
+margin_right = 1023.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 0, 300 )
 
@@ -87,13 +88,14 @@ valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LobbyNode/VBoxContainer"]
 margin_top = 304.0
-margin_right = 1024.0
+margin_right = 1023.0
 margin_bottom = 454.0
 rect_min_size = Vector2( 0, 150 )
 alignment = 1
 
 [node name="StartGame" parent="LobbyNode/VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 43.0
+margin_right = 1023.0
 margin_bottom = 73.0
 rect_min_size = Vector2( 0, 30 )
 focus_neighbour_top = NodePath("../ExitGame")
@@ -104,6 +106,7 @@ fish_margin_from_center = 70
 
 [node name="ExitGame" parent="LobbyNode/VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 77.0
+margin_right = 1023.0
 margin_bottom = 107.0
 rect_min_size = Vector2( 0, 30 )
 focus_neighbour_top = NodePath("../StartGame")
@@ -292,6 +295,9 @@ text = "Righ click - Fire weaon"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LobbySoundtrack" type="AudioStreamPlayer2D" parent="LobbyNode"]
+stream = ExtResource( 19 )
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" method="_on_ExitGame_pressed"]

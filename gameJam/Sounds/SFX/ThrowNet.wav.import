@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ThrowNet.wav-5f483d1aac5fee5c50e635170a5712df.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/ThrowNet.wav"
+dest_files=[ "res://.import/ThrowNet.wav-5f483d1aac5fee5c50e635170a5712df.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
