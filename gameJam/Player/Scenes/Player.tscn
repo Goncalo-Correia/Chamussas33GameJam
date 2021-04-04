@@ -118,20 +118,20 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.156555, 0 )
-rotation = 0.0928891
-scale = Vector2( 1.03907, 1.05075 )
+rotation = -0.211546
+scale = Vector2( 1.0709, 1.0921 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 425.735, 0.260536, 14.7777, 15.4039 )
 
 [node name="Flipper_2" type="Sprite" parent="Sprite"]
 position = Vector2( -7.99973, 5.20946 )
-rotation = -0.37567
+rotation = -1.05183
 texture = ExtResource( 10 )
 offset = Vector2( 8.1563, -5.62277 )
 
 [node name="Flipper_1" type="Sprite" parent="Sprite"]
 position = Vector2( -7.74702, 7.41643 )
-rotation = -0.961418
+rotation = -0.235264
 texture = ExtResource( 10 )
 offset = Vector2( 7.88292, -5.12167 )
 
