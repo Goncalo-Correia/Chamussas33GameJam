@@ -804,6 +804,10 @@ tile_data = PoolIntArray( -19595438, 10, 0, -17563863, 10, 0, -17367219, 10, 0, 
 [node name="Sprite" parent="DeepSea/Player/CanvasLayer" index="0"]
 visible = false
 
+[node name="Score" parent="DeepSea/Player/CanvasLayer" index="5"]
+anchor_left = -0.0031004
+anchor_right = 0.9969
+
 [node name="MapSeaweed" type="TileMap" parent="DeepSea"]
 modulate = Color( 0.733333, 0.686275, 0.517647, 1 )
 position = Vector2( 201.199, 244.72 )
