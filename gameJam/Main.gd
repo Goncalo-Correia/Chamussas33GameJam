@@ -28,3 +28,4 @@ func _on_player_shoot(dir):
 	instance._set_player(player)
 	add_child(instance)
 	
+
