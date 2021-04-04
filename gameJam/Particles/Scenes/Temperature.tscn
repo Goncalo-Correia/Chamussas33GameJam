@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Particles/Scripts/Oxygen.gd" type="Script" id=1]
+[ext_resource path="res://Particles/Scripts/Temperature.gd" type="Script" id=1]
 [ext_resource path="res://Particles/Textures/bubble.png" type="Texture" id=2]
 
 [sub_resource type="ParticlesMaterial" id=1]
@@ -12,14 +12,13 @@ gravity = Vector3( 0, -98, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 50.0
-scale = 0.2
-scale_random = 0.2
-color = Color( 0.0901961, 0.301961, 0.415686, 1 )
+scale = 0.3
+color = Color( 0.956863, 0.0196078, 0.0196078, 1 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 19.9518
 
-[node name="Node2D" type="Area2D"]
+[node name="Temperature" type="Area2D"]
 collision_layer = 0
 collision_mask = 32
 script = ExtResource( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Player/Textures/player_animation.png" type="Texture" id=1]
 [ext_resource path="res://Player/Scripts/player.gd" type="Script" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Shaders/WaterShaderMaterial.tres" type="Material" id=9]
 [ext_resource path="res://Player/Textures/barbatana.png" type="Texture" id=10]
 [ext_resource path="res://Textures/light2d_3.png" type="Texture" id=11]
+[ext_resource path="res://UI/Heart/Scenes/HeartUi.tscn" type="PackedScene" id=12]
+[ext_resource path="res://UI/Temperature/Scenes/Temperature.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Particles/Scenes/Bubbles.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/Score/Scenes/Control.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -110,7 +114,7 @@ tracks/2/keys = {
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -78.7258, 44.3977 )
-collision_layer = 33
+collision_layer = 1057
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -184,13 +188,35 @@ margin_right = 16.8617
 margin_bottom = 547.614
 rect_scale = Vector2( 2, 2 )
 
+[node name="Temperature" parent="CanvasLayer" instance=ExtResource( 13 )]
+margin_left = 26.416
+margin_top = 8.80534
+margin_right = 26.416
+margin_bottom = 8.80534
+
+[node name="Heart" parent="CanvasLayer" instance=ExtResource( 12 )]
+margin_left = 31.3929
+margin_top = 62.0202
+margin_right = 31.3929
+margin_bottom = 62.0202
+
+[node name="Score" parent="CanvasLayer" instance=ExtResource( 15 )]
+margin_left = 937.509
+margin_top = 14.6168
+margin_right = 937.509
+margin_bottom = 14.6168
+
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 19.1004, 3.12576 )
 scale = Vector2( 0.996143, 1 )
 texture = ExtResource( 11 )
 texture_scale = 1.5
 color = Color( 0.639216, 0.662745, 0.870588, 1 )
+mode = 2
 shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 scale = Vector2( 0.0184017, -0.0120522 )
+
+[node name="Node2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 14.3186, -3.33743 )

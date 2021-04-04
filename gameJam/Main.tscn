@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=53 format=2]
+=======
+[gd_scene load_steps=15 format=2]
+>>>>>>> player
 
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Particles/Scenes/Oxygen.tscn" type="PackedScene" id=2]
@@ -10,6 +14,7 @@
 [ext_resource path="res://Enemy/Regular/Scenes/Shark.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemy/Regular/Scenes/Fish.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Life/Scenes/FlockFishFactory.tscn" type="PackedScene" id=10]
+<<<<<<< HEAD
 [ext_resource path="res://Map/water_dark_4.png" type="Texture" id=11]
 [ext_resource path="res://Map/rock_2.png" type="Texture" id=12]
 [ext_resource path="res://Map/sand_2.png" type="Texture" id=13]
@@ -763,6 +768,12 @@ resource_local_to_scene = true
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 36/z_index = 0
+=======
+[ext_resource path="res://AudioLibrary.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Particles/Scenes/Temperature.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enemy/Regular/Scenes/Swordfish.tscn" type="PackedScene" id=13]
+[ext_resource path="res://DeepSea.gd" type="Script" id=14]
+>>>>>>> player
 
 [node name="Main" type="Node2D"]
 position = Vector2( 12.0844, 5.8338 )
@@ -783,7 +794,11 @@ tile_set = SubResource( 23 )
 tile_set = SubResource( 23 )
 
 [node name="DeepSea" type="Node2D" parent="."]
+<<<<<<< HEAD
 script = ExtResource( 25 )
+=======
+script = ExtResource( 14 )
+>>>>>>> player
 
 [node name="Map_Dust" type="TileMap" parent="DeepSea"]
 tile_set = ExtResource( 5 )
@@ -878,6 +893,7 @@ rot = 180
 [node name="Fog" type="CanvasModulate" parent="DeepSea"]
 color = Color( 0.0117647, 0.0117647, 0.0392157, 1 )
 
+<<<<<<< HEAD
 [node name="SoundTrack01" type="AudioStreamPlayer2D" parent="DeepSea"]
 stream = ExtResource( 26 )
 
@@ -890,6 +906,12 @@ stream = ExtResource( 28 )
 [node name="SeaAmbience" type="AudioStreamPlayer2D" parent="DeepSea"]
 stream = ExtResource( 29 )
 volume_db = -10.0
+=======
+[node name="Node2D2" parent="DeepSea" instance=ExtResource( 12 )]
+position = Vector2( -230.161, 59.1004 )
+
+[node name="Swordfish" parent="DeepSea" instance=ExtResource( 13 )]
+>>>>>>> player
 
 [node name="SeaLevel" type="Node2D" parent="."]
 visible = false

@@ -115,6 +115,8 @@ func _net_timeout():
 	$Net.visible = false
 	
 func _on_kill(body):
+	if player != null:
+		player.score += 5
 	idle_timer.stop()
 	patrolling_timer.stop()
 	curr_state = STATES.DEAD
@@ -125,9 +127,13 @@ func _area_entered(area):
 		netted = true
 		$Net.visible = true
 		net_timer.start()
+		area.queue_free()
 	else:
 		idle_timer.stop()
 		patrolling_timer.stop()
+		
 		curr_state = STATES.DEAD
+		if player != null:
+			player.score += 5
 
 
