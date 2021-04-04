@@ -13,6 +13,8 @@ onready var hitbox = $Hitbox
 var harpoons = 5
 var nets = 5
 
+signal die 
+
 enum WEAPONS { NET, KNIFE, HARPOON }
 
 var curr_weapon
@@ -65,6 +67,9 @@ func _input(event):
 		emit_signal("shoot", get_global_mouse_position().normalized())
 
 func _process(_delta):
+	
+	if oxygen_ui.get_value() <= 0 or temperature_ui.get_value() <= 0:
+		die()
 	
 	if oxygen_ui.get_value() < 2500:
 		heart_ui.set_animation("accelerated")
@@ -133,4 +138,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	oxygen_depletion_modifier = 1
 	pass
+	
+func die():
+	emit_signal("die")
 	

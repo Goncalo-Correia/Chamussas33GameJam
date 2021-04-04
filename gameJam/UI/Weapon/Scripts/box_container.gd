@@ -10,7 +10,7 @@ func _select():
 	set_modulate(Color(1,0.2,0.2,1))
 	
 func _deselect():
-	set_modulate(Color(1,1,1,1))
+	set_modulate(Color(0,0.2,1,1))
 	
 
 

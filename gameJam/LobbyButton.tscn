@@ -9,16 +9,19 @@ margin_top = 116.0
 margin_right = 1024.0
 margin_bottom = 136.0
 rect_min_size = Vector2( 0, 20 )
+focus_mode = 1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LeftFish" type="Sprite" parent="."]
+position = Vector2( 412, 6.66666 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 
 [node name="RightFish" type="Sprite" parent="."]
+position = Vector2( 612, 6.66666 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 flip_h = true
@@ -30,8 +33,8 @@ rect_min_size = Vector2( 1024, 0 )
 mouse_filter = 2
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center] Start [center]"
-text = " Start "
+bbcode_text = "[center] placeholder [/center]"
+text = " placeholder "
 __meta__ = {
 "_edit_use_anchors_": false
 }
