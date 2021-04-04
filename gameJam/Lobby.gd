@@ -1,7 +1,7 @@
 extends Node
 
 func _ready():
-	$VBoxContainer/VBoxContainer/StartGame.grab_focus()
+	$LobbyNode/VBoxContainer/VBoxContainer/StartGame.grab_focus()
 
 func _on_StartGame_pressed():
 	pass

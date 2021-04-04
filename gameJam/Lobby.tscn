@@ -278,6 +278,6 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 10 )
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/HowToPlay" to="." method="_on_HowToPlay_pressed"]
-[connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" method="_on_ExitGame_pressed"]
+[connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/BackToGame" to="." method="_on_StartGame_pressed"]
