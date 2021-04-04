@@ -28,6 +28,7 @@ font_data = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="LobbyNode" type="Node2D" parent="."]
+visible = false
 
 [node name="WaterTileMap" type="TileMap" parent="LobbyNode"]
 tile_set = ExtResource( 4 )
