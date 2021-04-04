@@ -300,5 +300,5 @@ __meta__ = {
 [node name="LobbySoundtrack" type="AudioStreamPlayer2D" parent="LobbyNode"]
 stream = ExtResource( 19 )
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
-[connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]
 [connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" method="_on_ExitGame_pressed"]
+[connection signal="pressed" from="LobbyNode/VBoxContainer/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]

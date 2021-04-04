@@ -5,5 +5,5 @@
 [resource]
 shader = ExtResource( 1 )
 shader_param/blue_tint = Color( 0.164706, 0.423529, 0.607843, 1 )
-shader_param/sprite_scale = Vector2( 2, 3 )
+shader_param/sprite_scale = Vector2( 5, 4 )
 shader_param/scale_x = 1.0
