@@ -23,3 +23,11 @@ func _on_SoundTrack03_finished():
 
 func _on_SeaAmbience_finished():
 	seaAmbienceSound.play()
+
+onready var player = $Player
+
+var collected = 0
+
+func add_to_collection():
+	collected += 1
+

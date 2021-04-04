@@ -29,6 +29,10 @@
 [ext_resource path="res://Sounds/SoundTracks/Soundtrack_Boss02.wav" type="AudioStream" id=27]
 [ext_resource path="res://Sounds/SoundTracks/Soundtrack_Boss03.wav" type="AudioStream" id=28]
 [ext_resource path="res://Sounds/SoundTracks/SeaAmbience.wav" type="AudioStream" id=29]
+[ext_resource path="res://AudioLibrary.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Particles/Scenes/Temperature.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enemy/Regular/Scenes/Swordfish.tscn" type="PackedScene" id=13]
+[ext_resource path="res://DeepSea.gd" type="Script" id=14]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/water_dark.png-d2e897695cfee93726278d0c1b0bcdcd.stex"
@@ -894,6 +898,12 @@ stream = ExtResource( 28 )
 [node name="SeaAmbience" type="AudioStreamPlayer2D" parent="DeepSea"]
 stream = ExtResource( 29 )
 volume_db = -10.0
+
+[node name="Node2D2" parent="DeepSea" instance=ExtResource( 12 )]
+position = Vector2( -230.161, 59.1004 )
+
+[node name="Swordfish" parent="DeepSea" instance=ExtResource( 13 )]
+
 
 [node name="SeaLevel" type="Node2D" parent="."]
 visible = false

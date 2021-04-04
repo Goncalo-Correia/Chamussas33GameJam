@@ -9,7 +9,7 @@ func _set_player(p):
 	
 func _process(delta):
 	if player != null:
-		_decrement(player.oxygen_depletion_modifier)
+		_decrement(player.temperature_depletion_modifier)
 
 func _set_value(val):
 	progress.value = val

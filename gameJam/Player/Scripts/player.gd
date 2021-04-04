@@ -4,6 +4,8 @@ class_name PersistentState
 
 var oxygen = 100
 var oxygen_depletion_modifier = 1
+var temperature_depletion_modifier = 1
+var score = 0
 onready var oxygen_ui = $CanvasLayer/Oxygen
 
 onready var hitbox = $Hitbox
@@ -17,6 +19,9 @@ var curr_weapon
 onready var cursor = $Cursor
 onready var knife_cursor = $Position2D/KnifeCursor
 onready var weapon_ui = $CanvasLayer/WeaponUI
+onready var heart_ui = $CanvasLayer/Heart
+onready var temperature_ui = $CanvasLayer/Temperature
+onready var score_ui = $CanvasLayer/Score
 
 const ACCELARATION = 10;
 const MAX_SPEED = 100;
@@ -36,6 +41,8 @@ func _ready():
 	state_factory = StateFactory.new();
 	weapon_ui._set_player(self)
 	oxygen_ui._set_player(self)
+	temperature_ui._set_player(self)
+	score_ui._set_player(self)
 	curr_weapon = WEAPONS.NET
 	hitbox.connect("body_entered",self,"_on_body_entered")
 	hitbox.connect("body_exited",self,"_on_body_exited")
@@ -59,7 +66,11 @@ func _input(event):
 
 func _process(_delta):
 	
-	print("Oxygen " + str(oxygen_depletion_modifier) )
+	if oxygen_ui.get_value() < 2500:
+		heart_ui.set_animation("accelerated")
+	else:
+		heart_ui.set_animation("normal")
+	
 	
 	if Input.is_action_just_released("weapon_1"):
 		knife_cursor.visible = false

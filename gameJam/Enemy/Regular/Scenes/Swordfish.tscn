@@ -11,10 +11,10 @@ extents = Vector2( 17.4105, 1.16986 )
 [sub_resource type="CircleShape2D" id=2]
 radius = 135.013
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "attack"
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "dead"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Main:visible")
@@ -53,10 +53,10 @@ tracks/2/keys = {
 "values": [ 0.0, 179.336 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "idle"
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 31.7705, 10 )
 
 [node name="Swordfish" type="KinematicBody2D"]
@@ -83,6 +83,8 @@ rotation = -0.00950909
 shape = SubResource( 1 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2( -0.48346, -0.751831 )
@@ -90,17 +92,17 @@ rotation = -0.00151974
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/attack = SubResource( 4 )
-anims/dead = SubResource( 5 )
-anims/idle = SubResource( 6 )
+anims/attack = SubResource( 3 )
+anims/dead = SubResource( 4 )
+anims/idle = SubResource( 5 )
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 16
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( -12.8322, 0.818993 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="PatrollingTimer" type="Timer" parent="."]
 wait_time = 5.0
