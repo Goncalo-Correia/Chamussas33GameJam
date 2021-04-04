@@ -3,7 +3,7 @@
 [ext_resource path="res://Player/Textures/player_animation.png" type="Texture" id=1]
 [ext_resource path="res://Player/Scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://Player/Scenes/Cursor.tscn" type="PackedScene" id=3]
-[ext_resource path="res://0x72_DungeonTilesetII_v1.3.png" type="Texture" id=4]
+[ext_resource path="res://Weapon/Textures/sword.png" type="Texture" id=4]
 [ext_resource path="res://Player/Scenes/KnifeCursor.gd" type="Script" id=5]
 [ext_resource path="res://UI/Weapon/Scenes/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Oxygen/Scenes/OxygenUI.tscn" type="PackedScene" id=7]
@@ -163,8 +163,8 @@ position = Vector2( 1.23372, 6.47703 )
 [node name="KnifeCursor" type="Sprite" parent="Position2D"]
 visible = false
 rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
-region_enabled = true
 region_rect = Rect2( 291.739, 18.2045, 7.75119, 13.252 )
 script = ExtResource( 5 )
 
@@ -196,10 +196,10 @@ margin_right = 26.416
 margin_bottom = 8.80534
 
 [node name="Heart" parent="CanvasLayer" instance=ExtResource( 12 )]
-margin_left = 31.3929
-margin_top = 62.0202
-margin_right = 31.3929
-margin_bottom = 62.0202
+margin_left = 29.6154
+margin_top = 39.8013
+margin_right = 29.6154
+margin_bottom = 39.8013
 
 [node name="Score" parent="CanvasLayer" instance=ExtResource( 15 )]
 margin_left = 937.509

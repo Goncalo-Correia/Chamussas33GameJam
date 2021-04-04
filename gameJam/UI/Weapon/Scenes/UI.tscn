@@ -12,19 +12,19 @@ __meta__ = {
 }
 
 [node name="Harpoon" parent="." instance=ExtResource( 1 )]
-margin_left = 44.4459
-margin_top = 6.15047
-margin_right = 44.4459
-margin_bottom = 6.15047
+margin_left = 50.3092
+margin_top = 5.7256
+margin_right = 50.3092
+margin_bottom = 5.7256
 
 [node name="Net" parent="." instance=ExtResource( 3 )]
-margin_left = 5.10606
-margin_top = 5.57025
-margin_right = 5.10606
-margin_bottom = 5.57025
+margin_left = 4.17134
+margin_top = 6.0801
+margin_right = 4.17134
+margin_bottom = 6.0801
 
 [node name="Knife" parent="." instance=ExtResource( 4 )]
-margin_left = 80.0722
-margin_top = 3.4814
-margin_right = 80.0722
-margin_bottom = 3.4814
+margin_left = 97.0672
+margin_top = 2.03682
+margin_right = 97.0672
+margin_bottom = 2.03682

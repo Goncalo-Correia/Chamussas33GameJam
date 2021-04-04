@@ -2,35 +2,27 @@
 
 [ext_resource path="res://Player/Textures/colored_transparent.png" type="Texture" id=1]
 [ext_resource path="res://UI/Weapon/Scripts/box_container.gd" type="Script" id=2]
-[ext_resource path="res://Fonts/EightBitDragon-anqx.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 7
 font_data = ExtResource( 3 )
 
 [node name="container" type="Sprite"]
-position = Vector2( 4.79843, 4.79845 )
-scale = Vector2( 1.4, 1.4 )
+position = Vector2( 6.99705, 3.65028 )
+scale = Vector2( 1.65866, 1.54352 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 662.58, 237.895, 17.0146, 16.264 )
 script = ExtResource( 2 )
 
-[node name="NumberContainer" type="Sprite" parent="."]
-modulate = Color( 0.898039, 0.584314, 0.584314, 1 )
-position = Vector2( -0.410837, -7.6005 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 665.146, 222.587, 11.7997, 12.9668 )
-
 [node name="Label" type="Label" parent="."]
-anchor_top = -0.00218123
+anchor_top = -0.00218125
 anchor_bottom = -0.00218125
-margin_left = -2.7436
-margin_top = -12.0275
-margin_right = 37.2564
-margin_bottom = 1.97246
+margin_left = -2.17923
+margin_top = -15.1325
+margin_right = 37.8208
+margin_bottom = -0.132509
 custom_fonts/font = SubResource( 1 )
 text = "1"
 __meta__ = {

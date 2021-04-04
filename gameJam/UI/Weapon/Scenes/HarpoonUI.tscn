@@ -13,15 +13,15 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 4.25112, 5.24196 )
+position = Vector2( 6.45601, 3.61731 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 13.9941
-margin_top = 2.26157
-margin_right = 53.9941
-margin_bottom = 16.2616
+margin_left = 22.1174
+margin_top = -0.755646
+margin_right = 62.1174
+margin_bottom = 13.2444
 text = "x0"
 __meta__ = {
 "_edit_use_anchors_": false

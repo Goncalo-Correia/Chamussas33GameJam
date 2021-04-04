@@ -765,9 +765,6 @@ script = ExtResource( 3 )
 
 [node name="Lobby" parent="." instance=ExtResource( 7 )]
 
-[node name="LobbyNode" parent="Lobby" index="0"]
-visible = true
-
 [node name="WaterTileMap" parent="Lobby/LobbyNode" index="0"]
 tile_set = SubResource( 23 )
 
