@@ -77,8 +77,6 @@ func _physics_process(delta):
 	pass
 	
 func patrol_movement(delta):
-	
-	animation_player.play("walk")
 	rng.randomize()
 	var x = rng.randi_range(-1, 1)
 	var y = rng.randi_range(-1, 1)

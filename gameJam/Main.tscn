@@ -994,21 +994,390 @@ texture = ExtResource( 4 )
 [node name="Fish" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
 position = Vector2( 12.0844, 5.8338 )
 
+[node name="Fish2" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 198.224, 364.134 )
+
+[node name="Fish3" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -203.323, 765.681 )
+
+[node name="Fish4" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 120.311, 948.474 )
+
+[node name="Fish5" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -745.71, 864.569 )
+
+[node name="Fish6" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1078.33, 1017.4 )
+
+[node name="Fish7" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1713.62, 726.724 )
+
+[node name="Fish8" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1932.37, 1227.16 )
+
+[node name="Fish9" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1953.35, 1038.37 )
+
+[node name="Fish10" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1869.44, 1601.74 )
+
+[node name="Fish11" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -2414.82, 1727.59 )
+
+[node name="Fish12" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -3187.95, 1685.64 )
+
+[node name="Fish13" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -2336.91, 2266.98 )
+
+[node name="Fish14" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -3343.77, 1272.11 )
+
+[node name="Fish15" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -3985.05, 1068.34 )
+
+[node name="Fish16" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -3050.11, 439.05 )
+
+[node name="Fish17" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -3775.29, -82.3613 )
+
+[node name="Fish18" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -3008.15, -627.745 )
+
+[node name="Fish19" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -2103.18, -795.555 )
+
+[node name="Fish20" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -3283.84, -1185.12 )
+
+[node name="Fish21" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1917.39, -1394.88 )
+
+[node name="Fish22" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -2097.18, -2120.06 )
+
+[node name="Fish23" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -2906.27, -2683.42 )
+
+[node name="Fish24" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -2217.05, -2779.31 )
+
+[node name="Fish25" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1294.09, -2359.79 )
+
+[node name="Fish26" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -856.585, -3055 )
+
+[node name="Fish27" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -526.958, -3396.62 )
+
+[node name="Fish28" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 126.304, -3150.89 )
+
+[node name="Fish29" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 905.424, -3084.97 )
+
+[node name="Fish30" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 617.749, -2533.59 )
+
+[node name="Fish31" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 1223.07, -2162.01 )
+
+[node name="Fish32" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 1648.58, -2707.4 )
+
+[node name="Fish33" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 2158.01, -2953.12 )
+
+[node name="Fish34" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 3033.02, -3306.72 )
+
+[node name="Fish35" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 3236.79, -2707.4 )
+
+[node name="Fish36" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 2595.51, -1568.68 )
+
+[node name="Fish37" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 2703.39, -1316.97 )
+
+[node name="Fish38" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 3416.59, -2144.03 )
+
+[node name="Fish39" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 4021.9, -2389.75 )
+
+[node name="Fish40" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 4063.85, -2941.13 )
+
+[node name="Fish41" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 3662.31, -3804.16 )
+
+[node name="Fish42" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 4429.44, -3798.16 )
+
+[node name="Fish43" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 5370.38, -4229.68 )
+
+[node name="Fish44" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 5927.75, -3870.08 )
+
+[node name="Fish45" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 5130.65, -3342.68 )
+
+[node name="Fish46" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 4489.37, -3222.81 )
+
+[node name="Fish47" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 4537.32, -2761.33 )
+
+[node name="Fish48" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 5040.75, -2419.72 )
+
+[node name="Fish49" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 5807.88, -2150.03 )
+
+[node name="Fish50" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 5088.69, -1856.36 )
+
+[node name="Fish51" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 4585.26, -1460.8 )
+
+[node name="Fish52" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 6467.14, -1334.95 )
+
+[node name="Fish53" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 6832.72, -364.043 )
+
+[node name="Fish54" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 6437.17, 205.313 )
+
+[node name="Fish55" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 3662.31, 121.408 )
+
+[node name="Fish56" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 3698.26, -609.765 )
+
+[node name="Fish57" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 3698.26, -609.765 )
+
+[node name="Fish58" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 1810.4, -441.955 )
+
+[node name="Fish59" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 1798.41, -903.434 )
+
+[node name="Fish60" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 2865.21, 301.205 )
+
+[node name="Fish61" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 1227.31, 2120.53 )
+
+[node name="Fish62" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 1433.94, 2558.98 )
+
+[node name="Fish68" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 3293.58, 2725.29 )
+
+[node name="Fish69" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 4634.14, 2362.44 )
+
+[node name="Fish70" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1232.99, -1246.94 )
+
+[node name="Fish63" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -32.6123, 3345.17 )
+
+[node name="Fish64" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -148.525, 2695.05 )
+
+[node name="Fish65" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( 431.039, 3239.34 )
+
+[node name="Fish66" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1010.31, 2962.16 )
+
+[node name="Fish67" parent="DeepSea/Fish\'s" instance=ExtResource( 9 )]
+position = Vector2( -1730.99, 2589.22 )
+
 [node name="Swordfish\'s" type="Node" parent="DeepSea"]
 
 [node name="Swordfish" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
-position = Vector2( 564.655, 176.377 )
+position = Vector2( 1357.51, -4754.42 )
+
+[node name="Swordfish2" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( 6409.13, -1847.29 )
+
+[node name="Swordfish3" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( 3743.62, -1122.39 )
+
+[node name="Swordfish4" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( -1391.05, 1120.25 )
+
+[node name="Swordfish5" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( -2251.87, 78.2134 )
+
+[node name="Swordfish6" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( -3097.58, 1852.7 )
+
+[node name="Swordfish7" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( -3218.39, -865.661 )
+
+[node name="Swordfish8" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( -666.157, 3060.86 )
+
+[node name="Swordfish9" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( 1115.88, 3340.24 )
+
+[node name="Swordfish10" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( 3985.26, 2698.41 )
+
+[node name="Swordfish11" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( 5563.41, 25.3567 )
+
+[node name="Swordfish12" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( -1685.54, -1900.15 )
+
+[node name="Swordfish13" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( -779.422, -3848.3 )
+
+[node name="Swordfish14" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( 1078.12, -1779.33 )
+
+[node name="Swordfish15" parent="DeepSea/Swordfish\'s" instance=ExtResource( 13 )]
+position = Vector2( 255.065, -699.539 )
 
 [node name="FishFactory" type="Node" parent="DeepSea"]
 
 [node name="Factory1" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
-position = Vector2( -251.732, 28.7681 )
+position = Vector2( -2020.96, -751.748 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory8" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 867.04, -1619.75 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory9" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 2067.04, -723.748 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory10" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 1459.04, 1416.25 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory11" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 1052.21, 2056.17 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory12" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( -354.761, 2687.61 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory13" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( -2795.76, 1695.95 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory14" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( -3900.48, 263.385 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory15" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( -3871.97, -1625.32 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory16" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( -3287.54, -3350.1 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory17" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 268.928, -2658.76 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory18" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 803.467, -3635.19 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory19" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 3276.6, -3628.06 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory20" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 3896.67, -3998.67 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory21" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 4138.99, -2872.58 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory22" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 5065.53, -3599.55 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory23" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 5044.14, -2166.99 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory24" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 3020.02, -1418.63 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory25" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 3419.15, 477.201 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory26" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 3540.31, 2408.67 )
+direction = Vector2( 1, 0 )
+rot = 180
+frequency = 2
+
+[node name="Factory27" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
+position = Vector2( 5963.55, 890.578 )
 direction = Vector2( 1, 0 )
 rot = 180
 frequency = 2
 
 [node name="Factory2" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
-position = Vector2( -237.564, 46.2696 )
+position = Vector2( -1224.93, -833.15 )
 direction = Vector2( 1, 0 )
 rot = 180
 frequency = 2
@@ -1019,25 +1388,25 @@ direction = Vector2( 1, 0 )
 rot = 180
 
 [node name="Factory4" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
-position = Vector2( -241.731, 82.5225 )
+position = Vector2( 872.625, -298.454 )
 direction = Vector2( 1, 0 )
 rot = 180
 frequency = 3
 
 [node name="Factory5" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
-position = Vector2( -252.982, 97.1071 )
+position = Vector2( 89.8969, -445.784 )
 direction = Vector2( 1, 0 )
 rot = 180
 frequency = 4
 
 [node name="Factory6" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
-position = Vector2( -274.234, 96.2736 )
+position = Vector2( -109.144, 607.417 )
 direction = Vector2( 1, 0 )
 rot = 180
 frequency = 2
 
 [node name="Factory7" parent="DeepSea/FishFactory" instance=ExtResource( 10 )]
-position = Vector2( -272.567, 30.0182 )
+position = Vector2( -812.283, 487.19 )
 direction = Vector2( 1, 0 )
 rot = 180
 
