@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crab_3.png-3ab4bf9a9698847709d3c3dc063bfe04.stex"
+path="res://.import/light2d_3.png-b43bcdeeaa421afc8d0c3eab1710a62f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Regular/Textures/crab_3.png"
-dest_files=[ "res://.import/crab_3.png-3ab4bf9a9698847709d3c3dc063bfe04.stex" ]
+source_file="res://Textures/light2d_3.png"
+dest_files=[ "res://.import/light2d_3.png-b43bcdeeaa421afc8d0c3eab1710a62f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

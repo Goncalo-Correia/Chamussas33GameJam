@@ -11,6 +11,8 @@ var knife_speed = 0.07
 var is_animation_player = false
 var going = true
 
+var weapon_type = "knife"
+
 func _ready():
 	tween.connect("tween_completed", self, "_on_tween_completed")
 	play_tween()
