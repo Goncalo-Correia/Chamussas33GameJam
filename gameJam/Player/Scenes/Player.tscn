@@ -149,6 +149,7 @@ anims/move = SubResource( 4 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.8, 0.8 )
+smoothing_enabled = true
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 

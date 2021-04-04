@@ -1,5 +1,6 @@
 extends Node2D
 
+var message = "";
 var money = 2000;
 var upgradePrices = [1000, 3000, 10000, INF];
 
@@ -14,11 +15,11 @@ var harpoonsAmmout = 0;
 var shop;
 
 func _ready():
-	_on_startDialog("OpenShop");
+	_on_message("Test test");
+#	startDialog("OpenShop");
 
 func _on_Dialogic_Signal(event):
 	print(event);
-	
 	if(event == "UpgradeO2Bottle"):
 		money -= upgradePrices[O2BottleLevel];
 		O2BottleLevel += 1;
@@ -44,7 +45,11 @@ func _on_Event_Start(action, event):
 #	print("EVENT:")
 #	print(event)
 
-func _on_startDialog(timeline):
+func _on_message(text):
+	message = text;
+	startDialog("Message");
+
+func startDialog(timeline):
 	dialog = Dialogic.start(timeline, false, "res://addons/dialogic/Dialog.tscn", false)
 	setDialogVariables();
 	dialog.connect("dialogic_signal", self, "_on_Dialogic_Signal");
@@ -53,6 +58,7 @@ func _on_startDialog(timeline):
 	
 func setDialogVariables():
 	Dialogic.set_variable("money", money)
+	Dialogic.set_variable("message", message)
 	Dialogic.set_variable("O2Bottle_Max_Level", O2BottleLevel == 3);
 	Dialogic.set_variable("O2Bottle_Upgrade_Price", upgradePrices[O2BottleLevel]);
 	Dialogic.set_variable("lamp_Max_Level", lampLevel == 3);
