@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Particles/Scenes/Oxygen.tscn" type="PackedScene" id=2]
@@ -10,10 +10,9 @@
 [ext_resource path="res://Enemy/Regular/Scenes/Shark.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemy/Regular/Scenes/Fish.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Life/Scenes/FlockFishFactory.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Map/water_dark_4.png" type="Texture" id=11]
-[ext_resource path="res://Map/rock_2.png" type="Texture" id=12]
-[ext_resource path="res://Map/sand_2.png" type="Texture" id=13]
-[ext_resource path="res://Map/rock_3.png" type="Texture" id=14]
+[ext_resource path="res://Particles/Scenes/Temperature.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enemy/Regular/Scenes/Swordfish.tscn" type="PackedScene" id=13]
+[ext_resource path="res://DeepSea.gd" type="Script" id=14]
 [ext_resource path="res://Map/water_dark_2.png" type="Texture" id=15]
 [ext_resource path="res://Map/rock_1.png" type="Texture" id=16]
 [ext_resource path="res://Map/seaweed_1.png" type="Texture" id=17]
@@ -24,15 +23,10 @@
 [ext_resource path="res://Map/background.png" type="Texture" id=22]
 [ext_resource path="res://Map/WallsSea.png" type="Texture" id=23]
 [ext_resource path="res://Map/water_dark_3.png" type="Texture" id=24]
-[ext_resource path="res://DeepSea.gd" type="Script" id=25]
 [ext_resource path="res://Sounds/SoundTracks/Soundtrack_Boss01.wav" type="AudioStream" id=26]
 [ext_resource path="res://Sounds/SoundTracks/Soundtrack_Boss02.wav" type="AudioStream" id=27]
 [ext_resource path="res://Sounds/SoundTracks/Soundtrack_Boss03.wav" type="AudioStream" id=28]
 [ext_resource path="res://Sounds/SoundTracks/SeaAmbience.wav" type="AudioStream" id=29]
-[ext_resource path="res://AudioLibrary.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Particles/Scenes/Temperature.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Enemy/Regular/Scenes/Swordfish.tscn" type="PackedScene" id=13]
-[ext_resource path="res://DeepSea.gd" type="Script" id=14]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/water_dark.png-d2e897695cfee93726278d0c1b0bcdcd.stex"
@@ -173,7 +167,6 @@ resource_local_to_scene = true
 4/shapes = [  ]
 4/z_index = 0
 5/name = "water_dark_4.png 5"
-5/texture = ExtResource( 11 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 32, 32 )
@@ -215,7 +208,6 @@ resource_local_to_scene = true
 7/shapes = [  ]
 7/z_index = 0
 8/name = "sand_2.png 8"
-8/texture = ExtResource( 13 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 32, 32 )
@@ -264,7 +256,6 @@ resource_local_to_scene = true
 } ]
 10/z_index = 0
 11/name = "rock_2.png 11"
-11/texture = ExtResource( 12 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 0, 64, 32 )
@@ -285,7 +276,6 @@ resource_local_to_scene = true
 } ]
 11/z_index = 0
 12/name = "rock_3.png 12"
-12/texture = ExtResource( 14 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 0, 0, 96, 64 )
@@ -787,7 +777,7 @@ tile_set = SubResource( 23 )
 tile_set = SubResource( 23 )
 
 [node name="DeepSea" type="Node2D" parent="."]
-script = ExtResource( 25 )
+script = ExtResource( 14 )
 
 [node name="Map_Dust" type="TileMap" parent="DeepSea"]
 tile_set = ExtResource( 5 )
@@ -808,9 +798,6 @@ script = ExtResource( 4 )
 
 [node name="Sprite" parent="DeepSea/Player/CanvasLayer" index="0"]
 visible = false
-
-[node name="Light2D" parent="DeepSea/Player" index="8"]
-mode = 2
 
 [node name="Dummy" parent="DeepSea" instance=ExtResource( 2 )]
 position = Vector2( 35.0731, -19.7753 )
@@ -903,7 +890,6 @@ volume_db = -10.0
 position = Vector2( -230.161, 59.1004 )
 
 [node name="Swordfish" parent="DeepSea" instance=ExtResource( 13 )]
-
 
 [node name="SeaLevel" type="Node2D" parent="."]
 visible = false
