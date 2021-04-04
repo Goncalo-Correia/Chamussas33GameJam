@@ -89,8 +89,8 @@ rect_min_size = Vector2( 0, 150 )
 alignment = 1
 
 [node name="StartGame" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 26.0
-margin_bottom = 56.0
+margin_top = 9.0
+margin_bottom = 39.0
 rect_min_size = Vector2( 0, 30 )
 focus_neighbour_top = NodePath("../ExitGame")
 focus_neighbour_bottom = NodePath("../HowToPlay")
@@ -99,8 +99,8 @@ button_text = "Start"
 fish_margin_from_center = 70
 
 [node name="HowToPlay" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 60.0
-margin_bottom = 90.0
+margin_top = 43.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 0, 30 )
 focus_neighbour_top = NodePath("../StartGame")
 focus_neighbour_bottom = NodePath("../ExitGame")
@@ -109,14 +109,24 @@ button_text = "How to play"
 fish_margin_from_center = 90
 
 [node name="ExitGame" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 94.0
-margin_bottom = 124.0
+margin_top = 77.0
+margin_bottom = 107.0
 rect_min_size = Vector2( 0, 30 )
 focus_neighbour_top = NodePath("../HowToPlay")
 focus_neighbour_bottom = NodePath("../StartGame")
 focus_mode = 1
 button_text = "Exit"
 fish_margin_from_center = 60
+
+[node name="BackToGame" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 111.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 0, 30 )
+focus_neighbour_top = NodePath("../ExitGame")
+focus_neighbour_bottom = NodePath("../HowToPlay")
+focus_mode = 1
+button_text = "Start"
+fish_margin_from_center = 70
 
 [node name="BigRockLeft" type="Sprite" parent="."]
 position = Vector2( 137.73, 483.115 )
@@ -263,3 +273,4 @@ texture = ExtResource( 10 )
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HowToPlay" to="." method="_on_HowToPlay_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitGame" to="VBoxContainer/VBoxContainer/ExitGame" method="_on_ExitGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/BackToGame" to="." method="_on_StartGame_pressed"]
