@@ -50,7 +50,6 @@ func _ready():
 	hitbox.connect("body_exited",self,"_on_body_exited")
 	change_state("idle");
 	
-	
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		match curr_weapon:

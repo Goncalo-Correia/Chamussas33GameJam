@@ -5,7 +5,7 @@ var HARPOON_INSTANCE = preload("res://Weapon/Scenes/Harpoon.tscn")
 var KNIFE_INSTANCE = preload("res://Weapon/Scenes/Knife.tscn")
 enum WEAPONS { NET, KNIFE, HARPOON }
 var weapon_factory
-onready var player = $DeepSea/Player
+onready var player = $Player
 
 signal end
 

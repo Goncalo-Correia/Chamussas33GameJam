@@ -1,0 +1,164 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Enemy/Regular/Scripts/Shark/fat_shark.gd" type="Script" id=1]
+[ext_resource path="res://Enemy/Regular/Textures/shark_dead.png" type="Texture" id=2]
+[ext_resource path="res://Enemy/Regular/Textures/shark.png" type="Texture" id=3]
+[ext_resource path="res://Enemy/Regular/Scenes/Shark/debug.gd" type="Script" id=4]
+[ext_resource path="res://Weapon/Textures/rede.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="Animation" id=4]
+resource_name = "chasing"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Main:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.824571, 1.41399 ), Vector2( 0.889, 1.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Main:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -2.23899 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Main:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dead:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dead:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -178.067 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Main:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.789, 1.4 ), Vector2( 0.831686, 1.41679 ) ]
+}
+
+[node name="FatShark" type="KinematicBody2D"]
+scale = Vector2( 3.36176, 3.07597 )
+collision_layer = 16
+collision_mask = 524288
+script = ExtResource( 1 )
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+scale = Vector2( 7.66847, 7.57039 )
+shape = SubResource( 1 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+scale = Vector2( 3.76325, 1.65615 )
+collision_layer = 0
+collision_mask = 514
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -0.473505, 0.887146 )
+scale = Vector2( 1.2716, -1.16342 )
+shape = SubResource( 2 )
+
+[node name="BodyCollider" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="PatrollingTimer" type="Timer" parent="."]
+
+[node name="IdleTimer" type="Timer" parent="."]
+
+[node name="DeadTimer" type="Timer" parent="."]
+
+[node name="NetTimer" type="Timer" parent="."]
+
+[node name="Main" type="Sprite" parent="."]
+rotation = -0.0388915
+scale = Vector2( 0.888693, 1.1015 )
+texture = ExtResource( 3 )
+
+[node name="Dead" type="Sprite" parent="."]
+visible = false
+rotation = -3.10786
+scale = Vector2( 0.792, 1.401 )
+texture = ExtResource( 2 )
+
+[node name="Net" type="Sprite" parent="."]
+visible = false
+position = Vector2( 5.27142, 1.67598 )
+scale = Vector2( 1.41813, 1.25293 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/chasing = SubResource( 4 )
+anims/dead = SubResource( 5 )
+anims/idle = SubResource( 6 )
+
+[node name="Debug" type="Label" parent="."]
+margin_left = -36.804
+margin_top = -59.8115
+margin_right = 3.196
+margin_bottom = -45.8115
+rect_scale = Vector2( 1.5053, 1.7253 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
